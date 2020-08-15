@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <section id="horoscope">
+     <article>Aries</article>
+     <ul class="properties"></ul>
+ </section>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+//Horoscope Code
+
+var sign = "aries";
+var queryURL = "https://aztro.sameerkumar.website?sign=" + sign + "&day=today"
+
+  $.ajax({
+    url: queryURL,
+    method: "POST"
+  }).then(function(response){
+      console.log(response)
+      
+      var list = $(".properties");
+
+      var colorId = $("<li>").text(response.color);
+      var compatId = $("<li>").text(response.compatibility);
+      var curDate =  $("<li>").text(response.current_date);
+      var dateId = $("<li>").text(response.date_range);
+      var descriptId = $("<li>").text(response.description);
+      var luckNum = $("<li>").text(response.lucky_number);
+      var luckTime = $("<li>").text(response.lucky_time);
+      var moodId = $("<li>").text(response.mood);
+
+    list.append(colorId, compatId, curDate, dateId, descriptId, luckNum, luckTime, moodId)
+    
+    
+  })
+
+  
+    
+
+
+
+</script>
+
+</html>
