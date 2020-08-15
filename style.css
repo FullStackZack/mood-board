@@ -38,10 +38,15 @@ strong {
     font-size: 15px;
 }
 
+.moodi-2 {
+    font-size: 80px;
+    margin-top: -12px;
+}
+
 .notification-1 {
     font-family: 'Quicksand', sans-serif;
-    margin-top: 100px;
     background-color: white;
+    margin-top: -80px;
     margin-left: 250px;
     margin-right: 250px;
     border-radius: 100px;
