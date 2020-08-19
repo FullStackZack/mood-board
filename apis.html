@@ -13,39 +13,28 @@
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
+
 <script type="text/javascript">
 
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://getvideo.p.rapidapi.com/?url=https%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DnfWlot6h_JM",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "getvideo.p.rapidapi.com",
+		"x-rapidapi-key": "16213a7de1msh6df8c4fb25bd36ep1bd4e2jsncd1b38d57e57"
+	}
+}
 
-//Horoscope Code
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
 
-var sign = "aries";
-var queryURL = "https://aztro.sameerkumar.website?sign=" + sign + "&day=today"
-
-  $.ajax({
-    url: queryURL,
-    method: "POST"
-  }).then(function(response){
-      console.log(response)
-      
-      var list = $(".properties");
-
-      var colorId = $("<li>").text(response.color);
-      var compatId = $("<li>").text(response.compatibility);
-      var curDate =  $("<li>").text(response.current_date);
-      var dateId = $("<li>").text(response.date_range);
-      var descriptId = $("<li>").text(response.description);
-      var luckNum = $("<li>").text(response.lucky_number);
-      var luckTime = $("<li>").text(response.lucky_time);
-      var moodId = $("<li>").text(response.mood);
-
-    list.append(colorId, compatId, curDate, dateId, descriptId, luckNum, luckTime, moodId)
-    
-    
-  })
-
-  
-    
-
+/// HANGRY! APIS 
+// apiKeyYT = AIzaSyDN-tVKIItn_Xdw_mpHY6puo1NLIYi0T34
+// apiKey YT2= AIzaSyBgr9PhKsU3ILWSdUPOPdLoF7itRAOHclc
 
 
 </script>
