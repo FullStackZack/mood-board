@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <section id="horoscope">
+     <article>Aries</article>
+     <ul class="properties"></ul>
+ </section>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
+
+<script type="text/javascript">
+
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://getvideo.p.rapidapi.com/?url=https%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DnfWlot6h_JM",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "getvideo.p.rapidapi.com",
+		"x-rapidapi-key": "16213a7de1msh6df8c4fb25bd36ep1bd4e2jsncd1b38d57e57"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+
+/// HANGRY! APIS 
+// apiKeyYT = AIzaSyDN-tVKIItn_Xdw_mpHY6puo1NLIYi0T34
+// apiKey YT2= AIzaSyBgr9PhKsU3ILWSdUPOPdLoF7itRAOHclc
+
+
+</script>
+
+</html>
