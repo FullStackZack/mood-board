@@ -15,31 +15,43 @@
 
 
         apiKey = "97b221ffbf12db5db8bf8eae9e080354"
-        queryURL = "https://api.themoviedb.org/3/trending/movie/week?with_genres=99&primary_release_year=2020&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354"
+        queryURL = "https://api.themoviedb.org/3/discover/movie?with_genres=99&primary_release_year=2020&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354"
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
             console.log(response)
 
-            var movieTitle1 = (response.results[0].original_title)
-            var movieTitle2 = (response.results[1].original_title)
-            var movieTitle3 = (response.results[2].original_title)
-            var movieTitle4 = (response.results[3].original_title)
-            var movieTitle5 = (response.results[4].original_title)
-            var p1 = $("<p>").text(movieTitle1)
-            var p2 = $("<p>").text(movieTitle2)
-            var p3 = $("<p>").text(movieTitle3)
-            var p4 = $("<p>").text(movieTitle4)
-            var p5 = $("<p>").text(movieTitle5)
+            for (var i = 0; i < 5; i++){
+            
+            // creates the random index
+            var randomIndex = Math.floor(Math.random() * response.results.length)
+            
+            // pulls the movie title 
+            var movieTitle1 = (response.results[randomIndex].original_title)
 
-            $("#viewAPI").append(p1, p2, p3, p4, p5)
+            // pulls the movie plot    
+            var moviePlot =(response.results[randomIndex].overview)
+           
+           // creates the p tag for the variables
+           var p1 = $("<p>").text(movieTitle1)
+           var p2 = $("<p>").text(moviePlot)
 
-            var moviePoster = (response.results[0].poster_path)
-            var imageURL = ("https://image.tmdb.org/t/p/w500/bOKjzWDxiDkgEQznhzP4kdeAHNI.jpg")
+            // displays the variables 
+           $("#viewAPI").append(p1)
+           $("#viewAPI").append(p2)
+
+            // pulls the poster 
+           var moviePoster = (response.results[randomIndex].poster_path)
+            
+            // pulls poster url
+            var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
             imageURL = $("<img>").attr("src", imageURL)
 
+            // displays the poster
             $("#viewAPI").append(imageURL)
+
+        }
 
 
         });
