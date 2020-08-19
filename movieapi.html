@@ -24,19 +24,31 @@
 
             for (var i = 0; i < 5; i++){
             
+            // creates the random index
             var randomIndex = Math.floor(Math.random() * response.results.length)
+            
+            // pulls the movie title 
             var movieTitle1 = (response.results[randomIndex].original_title)
+
+            // pulls the movie plot    
+            var moviePlot =(response.results[randomIndex].overview)
            
+           // creates the p tag for the variables
            var p1 = $("<p>").text(movieTitle1)
+           var p2 = $("<p>").text(moviePlot)
 
+            // displays the variables 
            $("#viewAPI").append(p1)
+           $("#viewAPI").append(p2)
 
+            // pulls the poster 
            var moviePoster = (response.results[randomIndex].poster_path)
             
-
+            // pulls poster url
             var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
             imageURL = $("<img>").attr("src", imageURL)
 
+            // displays the poster
             $("#viewAPI").append(imageURL)
 
         }
