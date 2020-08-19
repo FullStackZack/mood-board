@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- Rapid api link to input your search and replace ajax 
+https://rapidapi.com/convertisseur.mp3.video/api/youtube-search1/endpoints -->
+
+<body>
+    <div id="viewAPI">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://youtube-search1.p.rapidapi.com/Primitive%2520Survival%2520Skills",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "youtube-search1.p.rapidapi.com",
+		"x-rapidapi-key": "16213a7de1msh6df8c4fb25bd36ep1bd4e2jsncd1b38d57e57"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+
+    for (var i = 0; i < 5; i++){
+
+        var randomIndex = Math.floor(Math.random()* response.items.length)
+        
+        var videoImage = (response.items[randomIndex].thumbAnim)
+        var videoTitle = (response.items[randomIndex].title)
+
+        var videoImg = $("<img>")
+        var titleP = $("<h1>")
+
+        videoImg.attr("src", videoImage)
+        
+         
+        $("#viewAPI").append(videoTitle)
+        $("#viewAPI").append(videoImg)
+
+
+    }
+});
+
+    </script>
+</body>
+
+</html>
