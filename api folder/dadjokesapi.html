@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="viewAPI"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    
+    var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://dad-jokes.p.rapidapi.com/random/jokes",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "dad-jokes.p.rapidapi.com",
+		"x-rapidapi-key": "16213a7de1msh6df8c4fb25bd36ep1bd4e2jsncd1b38d57e57"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+
+    var punchlineEl = response.punchline
+    var setupEl = response.setup
+
+    var question = $("<p>").text(setupEl)
+    var joke = $("<p>").text(punchlineEl)
+
+    $("#viewAPI").append(question, joke)
+});
+
+    </script>
+</body>
+
+</html>
