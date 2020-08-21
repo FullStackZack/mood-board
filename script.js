@@ -203,47 +203,79 @@ function displayStressedSuggestions() {
 $("#chipper-mood").on("click", function(event) {
     event.preventDefault();
 
+    $("#suggestion-bubbles").empty();
+
     displayChipperSuggestions();
+
+    $("html").css("background-color", "rgba(235, 233, 147, 0.2)");
 });
 
 $("#bummed-mood").on("click", function(event) {
     event.preventDefault();
 
+    $("#suggestion-bubbles").empty();
+
     displayBummedSuggestions();
+
+    $("html").css("background-color", "rgba(148, 198, 228, 0.2)");
 });
 
 $("#curious-mood").on("click", function(event) {
     event.preventDefault();
 
+    $("#suggestion-bubbles").empty();
+
     displayCuriousSuggestions();
+
+    $("html").css("background-color", "rgba(198, 231, 105, 0.2)");
 });
 
 $("#hangry-mood").on("click", function(event) {
     event.preventDefault();
 
+    $("#suggestion-bubbles").empty();
+
     displayHangrySuggestions();
+
+    $("html").css("background-color", "rgba(221, 83, 58, 0.2)");
 });
 
 $("#distracted-mood").on("click", function(event) {
     event.preventDefault();
 
+    $("#suggestion-bubbles").empty();
+
     displayDistractedSuggestions();
+
+    $("html").css("background-color", "rgba(236, 181, 28, 0.2)");
 })
 
 $("#flirty-mood").on("click", function(event) {
     event.preventDefault();
 
+    $("#suggestion-bubbles").empty();
+
     displayFlirtySuggestions();
+
+    $("html").css("background-color", "rgba(224, 181, 221, 0.2)");
 });
 
 $("#grumpy-mood").on("click", function(event) {
     event.preventDefault();
 
+    $("#suggestion-bubbles").empty();
+
     displayGrumpySuggestions();
+
+    $("html").css("background-color", "rgba(44, 194, 81, 0.2)");
 });
 
 $("#stressed-mood").on("click", function(event) {
     event.preventDefault();
 
+    $("#suggestion-bubbles").empty();
+
     displayStressedSuggestions();
+
+    $("html").css("background-color", "rgba(178, 95, 226, 0.2)");
 });
