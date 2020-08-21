@@ -57,8 +57,8 @@ strong {
     font-family: 'Quicksand', sans-serif;
     background-color: white;
     border-radius: 100px;
-    margin-left: 450px;
-    margin-right: 450px;
+    margin-left: 350px;
+    margin-right: 350px;
     height: 40px;
     text-align: center;
 }
@@ -86,3 +86,26 @@ h3 {
     padding: 18px;
 }
 
+img {
+    border-radius: 50px;
+    width: 250px;
+    height: auto;
+    padding: 25px;
+}
+
+.plot {
+    font-size: 12px;
+}
+
+.movie-title {
+    font-size: 20px;
+    text-align: center;
+}
+
+.joke-question {
+    font-size: 28px;
+}
+
+.dad-joke {
+    font-style: italic;
+}
