@@ -39,8 +39,8 @@ strong {
 }
 
 .moodi-2 {
+    margin-top: -1px;
     font-size: 80px;
-    margin-top: -12px;
 }
 
 .notification-1 {
@@ -87,10 +87,9 @@ h3 {
 }
 
 img {
-    border-radius: 50px;
+    border-radius: 10px;
     width: 250px;
-    height: auto;
-    padding: 25px;
+    padding: 5px;
 }
 
 .plot {
@@ -98,7 +97,7 @@ img {
 }
 
 .movie-title {
-    font-size: 20px;
+    font-size: 14px;
     text-align: center;
 }
 
@@ -108,4 +107,28 @@ img {
 
 .dad-joke {
     font-style: italic;
+}
+
+.suggest-title {
+    font-size: 26px;
+    margin-left: 180px;
+    padding-top: 25px;
+}
+
+.row {
+    justify-content: center;
+    padding: 30px;
+}
+
+.card {
+    border-radius: 25px;
+    height: max-content;
+}
+
+.card-title {
+    font-size: 24px;
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(119, 116, 116);
+    font-family: 'Quicksand', sans-serif;
 }
