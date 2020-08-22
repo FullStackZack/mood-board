@@ -5,9 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
@@ -16,9 +13,10 @@
 
         <link rel="stylesheet" href="style.css">
 
-        <title>Moodii. | Dashboard</title>
+        <title>Moodi. | Dashboard</title>
 
     </head>
+
 
     <body>
 
@@ -30,7 +28,8 @@
           </div>
           <br>
           <p class="mood-swing">HOW YA FEELIN'?</p>
-          <nav class="level">
+          <nav id="moods" class="level">
+
             <div class="level-right">
                 <p class="level-item" id="chipper-mood"><a>chipper.</a></p>
                 <p class="level-item" id="bummed-mood"><a>bummed.</a></p>
@@ -42,11 +41,27 @@
                 <p class="level-item" id="stressed-mood"><a>stressed.</a></p>
             </div>
           </nav>
-          <main id="suggestion-bubbles">
+          <main class="row" id="suggestion-bubbles">
 
-            <div id="suggestions"></div>
-            
+            <div id="suggestions1"></div>
+            <div id="suggestions2"></div>
+            <div id="suggestions3"></div>
+            <div id="suggestions4"></div>
+            <div id="suggestions5"></div>
+
             <!-- Suggestion Containers will go here -->
+      <!--  <div class="row">
+              <div class="col-sm-2">
+                  <div class="card" stye="width: 18rem;">
+                            
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <img src="..." class="card-img-top" alt="...">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                  </div>
+            </div> -->
             
           </main>
 

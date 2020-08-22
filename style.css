@@ -8,6 +8,12 @@ h1 {
     font-family: 'Sacramento', cursive;
 }
 
+
+h5{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+}
+
 .notification {
     width: 45%;
     background-color: white;
@@ -39,8 +45,8 @@ strong {
 }
 
 .moodi-2 {
-    margin-top: -1px;
     font-size: 80px;
+    margin-top: -12px;
 }
 
 .notification-1 {
@@ -56,7 +62,7 @@ strong {
     height: 100px;
 }
 
-.level {
+#moods {
     font-family: 'Quicksand', sans-serif;
     background-color: white;
     border-style: solid;
@@ -67,6 +73,7 @@ strong {
     margin-right: 350px;
     height: 40px;
     text-align: center;
+    justify-content: center;
 }
 
 .mood-swing {
@@ -75,9 +82,6 @@ strong {
     font-size: 24px;;
 }
 
-.level {
-    justify-content: center;
-}
 
 p {
     font-weight: bold;
@@ -93,9 +97,10 @@ h3 {
 }
 
 img {
-    border-radius: 10px;
+    border-radius: 50px;
     width: 250px;
-    padding: 5px;
+    height: auto;
+    padding: 25px;
 }
 
 .plot {
@@ -103,7 +108,7 @@ img {
 }
 
 .movie-title {
-    font-size: 14px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -115,25 +120,23 @@ img {
     font-style: italic;
 }
 
-.suggest-title {
-    font-size: 20px;
-    margin-left: 160px;
-    padding-top: 20px;
-    font-style: italic;
-    color: rgb(78, 78, 78, 0.8);
-}
-
-.row {
+.level {
+    margin-left: 350px;
+    margin-right: 350px;
     justify-content: center;
-    padding: 30px;
+    text-align: center;
 }
 
 .card {
-    border-radius: 25px;
-    height: max-content;
+    border-radius: 20px;
+    margin: 20px;
+    align-content: center;
+    width: 80%;
+    height: 450px;
 }
 
-.card-title {
+.suggest-title {
+    margin-left: 125px;
     font-size: 24px;
     text-align: center;
     font-weight: bolder;
