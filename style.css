@@ -8,6 +8,12 @@ h1 {
     font-family: 'Sacramento', cursive;
 }
 
+
+h5{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+}
+
 .notification {
     width: 45%;
     background-color: white;
@@ -53,7 +59,7 @@ strong {
     height: 100px;
 }
 
-.level {
+#moods {
     font-family: 'Quicksand', sans-serif;
     background-color: white;
     border-radius: 100px;
@@ -61,6 +67,7 @@ strong {
     margin-right: 350px;
     height: 40px;
     text-align: center;
+    justify-content: center;
 }
 
 .mood-swing {
@@ -69,9 +76,6 @@ strong {
     font-size: 24px;;
 }
 
-.level {
-    justify-content: center;
-}
 
 p {
     font-weight: bold;
@@ -109,3 +113,25 @@ img {
 .dad-joke {
     font-style: italic;
 }
+
+.level {
+    margin-left: 350px;
+    margin-right: 350px;
+    justify-content: center;
+    text-align: center;
+}
+
+.card {
+    border-radius: 20px;
+    margin: 20px;
+    align-content: center;
+    width: 80%;
+    height: 450px;
+}
+
+.suggest-title {
+    margin-left: 125px;
+    font-size: 24px;
+    font-style: italic;
+}
+
