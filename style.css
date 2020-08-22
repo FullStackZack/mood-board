@@ -1,5 +1,5 @@
 html {
-    background-color: rgba(158, 155, 157, 0.2);
+    background-color: rgba(158, 158, 155, 0.2);
 }
 
 h1 {
@@ -52,16 +52,22 @@ strong {
 .notification-1 {
     font-family: 'Quicksand', sans-serif;
     background-color: white;
+    border-style: solid;
+    border-color: rgb(197, 195, 195, 0.8);
+    border-width: 2px;
+    border-radius: 50px;
     margin-top: -80px;
     margin-left: 250px;
     margin-right: 250px;
-    border-radius: 100px;
     height: 100px;
 }
 
 #moods {
     font-family: 'Quicksand', sans-serif;
     background-color: white;
+    border-style: solid;
+    border-color: rgb(197, 195, 195, 0.8);
+    border-width: 2px;
     border-radius: 100px;
     margin-left: 350px;
     margin-right: 350px;
@@ -132,6 +138,21 @@ img {
 .suggest-title {
     margin-left: 125px;
     font-size: 24px;
-    font-style: italic;
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(119, 116, 116);
+    font-family: 'Quicksand', sans-serif;
 }
 
+.rating {
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'Quicksand', sans-serif;
+}
+
+button#learn-more {
+    border-radius: 25px;
+    margin-top: 5px;
+    margin-left: 20px;
+    background-color: rgba(53, 140, 226, 0.9);
+}

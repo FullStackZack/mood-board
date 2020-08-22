@@ -1,8 +1,12 @@
+$("goBtn").on("click", function() {
+})
 
+$(".moodi-2").on("click", function() {
+})
 
 function displayChipperSuggestions() {
 
-    var movieQueryURL = "https://api.themoviedb.org/3/discover/movie?&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=12,28"
+    var movieQueryURL = "https://api.themoviedb.org/3/discover/movie?&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres="
         $.ajax({
             url: movieQueryURL,
             method: "GET"
@@ -33,8 +37,11 @@ function displayChipperSuggestions() {
                 var movieImg = $("<img>").attr("src", imageURL)
                 //var moviePlot =(response.results[randomIndex].overview)
                 //var para1 = $("<p class='plot'>").text(moviePlot)
+                var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
+                var movieRating = response.results[randomIndex].vote_average
+                var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
     
-                card.append(h5, movieImg)
+                card.append(h5, movieImg, ratingP, learnMore)
                 col.append(card)
                 row.append(col)
     
@@ -151,7 +158,6 @@ function displayHangrySuggestions() {
         }).then(function (response) {
             console.log(response)
     
-            console.log(response.list)
             $("#suggestions1").empty();
             $("#suggestions2").empty();
             $("#suggestions3").empty();
@@ -176,8 +182,11 @@ function displayHangrySuggestions() {
                 var movieImg = $("<img>").attr("src", imageURL)
                 //var moviePlot =(response.results[randomIndex].overview)
                 //var para1 = $("<p class='plot'>").text(moviePlot)
+                var movieRating = response.results[randomIndex].vote_average
+                var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
+                var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
     
-                card.append(h5, movieImg)
+                card.append(h5, movieImg, ratingP, learnMore)
                 col.append(card)
                 row.append(col)
     
@@ -227,8 +236,11 @@ function displayFlirtySuggestions() {
             var movieImg = $("<img>").attr("src", imageURL)
             //var moviePlot =(response.results[randomIndex].overview)
             //var para1 = $("<p class='plot'>").text(moviePlot)
+            var movieRating = response.results[randomIndex].vote_average
+            var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
+            var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
 
-            card.append(h5, movieImg)
+            card.append(h5, movieImg, ratingP, learnMore)
             col.append(card)
             row.append(col)
 
@@ -275,8 +287,11 @@ function displayGrumpySuggestions() {
             var movieImg = $("<img>").attr("src", imageURL)
             //var moviePlot =(response.results[randomIndex].overview)
             //var para1 = $("<p class='plot'>").text(moviePlot)
+            var movieRating = response.results[randomIndex].vote_average
+            var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
+            var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
 
-            card.append(h5, movieImg)
+            card.append(h5, movieImg, ratingP, learnMore)
             col.append(card)
             row.append(col)
 
