@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
 <body>
@@ -22,37 +24,35 @@
         }).then(function (response) {
             console.log(response)
 
-            for (var i = 0; i < 5; i++){
-            
-            // creates the random index
-            var randomIndex = Math.floor(Math.random() * response.results.length)
-            
-            // pulls the movie title 
-            var movieTitle1 = (response.results[randomIndex].original_title)
+            $("#viewAPI").empty();
 
-            // pulls the movie plot    
-            var moviePlot =(response.results[randomIndex].overview)
-           
-           // creates the p tag for the variables
-           var p1 = $("<p>").text(movieTitle1)
-           var p2 = $("<p>").text(moviePlot)
+            //var fiveMovies = response.results;
+            var row = $("<div class='row'>")
 
-            // displays the variables 
-           $("#viewAPI").append(p1)
-           $("#viewAPI").append(p2)
+            for (var i = 0; i < 5; i++) {
+                
+                var randomIndex = Math.floor(Math.random() * response.results.length)
 
-            // pulls the poster 
-           var moviePoster = (response.results[randomIndex].poster_path)
-            
-            // pulls poster url
-            var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
-            imageURL = $("<img>").attr("src", imageURL)
+                    var col = $("<div class='col-sm-2'>")
+                    var card = $("<div class='card'>")
+                    var cardBody = $("<div class='card-body'>")
+                    var movieTitle = response.results[randomIndex].original_title
+                    var h5 = $("<h5 class='card-title'>").text(movieTitle)
+                    var moviePoster = response.results[randomIndex].poster_path
+                    var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
+                    
+                    var movieImg = $("<img>").attr("src", imageURL)
+                    var moviePlot =(response.results[randomIndex].overview)
+                    var para1 = $("<p class='plot'>").text(moviePlot)
 
-            // displays the poster
-            $("#viewAPI").append(imageURL)
+                    cardBody.append(h5, movieImg, para1)
+                    card.append(cardBody)
+                    col.append(card)
+                    row.append(col)
 
-        }
-
+                    $("#viewAPI").append(row)
+                    
+            }
 
         });
 
