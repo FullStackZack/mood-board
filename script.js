@@ -49,8 +49,7 @@ function displayChipperSuggestions() {
                 $("#suggestions1").append(row)
             
             }
-    
-    
+
         });
 
             var tvQueryURL = "https://api.themoviedb.org/3/discover/tv?&original_air_date=2019&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=35,18"
@@ -96,6 +95,44 @@ function displayChipperSuggestions() {
 
 function displayBummedSuggestions() {
 
+    var tvQueryURL = "https://api.themoviedb.org/3/discover/tv?&original_air_date=2019&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=35"
+
+            $.ajax({
+                url: tvQueryURL,
+                method: "GET"
+            }).then(function(response) {
+                console.log(response)
+
+
+                var suggestTitle =$("<h2 class='suggest-title'>").text("Relax and watch some comedies...")
+                var row = $("<div class='level'>")
+        
+                for (var i = 0; i < 5; i++){
+                
+                    var randomIndex = Math.floor(Math.random() * response.results.length)
+                
+                    var col = $("<div class='level-right'>")
+                    var card = $("<div class='card'>")
+                    var movieTitle = response.results[randomIndex].original_title
+                    var h5 = $("<h5 class='card-header-title'>").text(movieTitle)
+                    var moviePoster = response.results[randomIndex].poster_path
+                    var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
+                        
+                    var movieImg = $("<img>").attr("src", imageURL)
+                    //var moviePlot =(response.results[randomIndex].overview)
+                    //var para1 = $("<p class='plot'>").text(moviePlot)
+        
+                    card.append(h5, movieImg)
+                    col.append(card)
+                    row.append(col)
+        
+                    $("#suggestions2").append(suggestTitle)
+                    $("#suggestions2").append(row)
+                
+                }
+            });
+
+        
 }
 
 function displayCuriousSuggestions() {
@@ -142,7 +179,6 @@ function displayCuriousSuggestions() {
                 $("#suggestions1").append(row)
             
             }
-    
     
         });
 }
