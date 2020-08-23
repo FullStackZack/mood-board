@@ -1,53 +1,67 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Sora:wght@100&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <title>Moodi. | Dashboard</title>
-
-    </head>
+  <!-- Bulma Stylesheet Link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 
 
-    <body>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
 
-        <h1 class="moodi-2">Moodii.</h1>
-        <div class="container-1">
-            <div class="notification-1">
-              <h3>Greetings, <span id="greeting">name</span></h3>
-            </div>
-          </div>
-          <br>
-          <p class="mood-swing">MOOD SWINGS</p>
-          <nav id="moods" class="level">
-            <div class="level-right">
-                <p class="level-item" id="chipper-mood"><a>chipper.</a></p>
-                <p class="level-item" id="bummed-mood"><a>bummed.</a></p>
-                <p class="level-item" id="curious-mood"><a>curious.</a></p>
-                <p class="level-item" id="hangry-mood"><a>hangry.</a></p>
-                <p class="level-item" id="distracted-mood"><a>distracted.</a></p>
-                <p class="level-item" id="flirty-mood"><a>flirty.</a></p>
-                <p class="level-item" id="grumpy-mood"><a>grumpy.</a></p>
-                <p class="level-item" id="stressed-mood"><a>stressed.</a></p>
-            </div>
-          </nav>
-          <main class="row" id="suggestion-bubbles">
+  <!-- Google Fonts Stylesheet  -->
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Sora:wght@100&display=swap"
+    rel="stylesheet">
 
-            <div id="suggestions1"></div>
-            <div id="suggestions2"></div>
-            <div id="suggestions3"></div>
-            <div id="suggestions4"></div>
-            <div id="suggestions5"></div>
+ <!-- Base Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 
-            <!-- Suggestion Containers will go here -->
-      <!--  <div class="row">
+  <title>Moodi. | Dashboard</title>
+
+</head>
+
+
+<body>
+
+  <header>
+    <h1>Moodii.</h1>
+
+    <div class="notification-1">
+      <h3>Greetings, <span id="greeting">name</span></h3>
+    </div>
+
+    <p class="mood-swing">MOOD SWINGS</p>
+
+    <nav id="moods" class="level-item">
+      <ul>
+        <li  id="chipper-mood"><a>chipper.</a></li>
+        <li  id="bummed-mood"><a>bummed.</a></li>
+        <li id="curious-mood"><a>curious.</a></li>
+        <li  id="hangry-mood"><a>hangry.</a></li>
+        <li id="distracted-mood"><a>distracted.</a></li>
+        <li  id="flirty-mood"><a>flirty.</a></li>
+        <li id="grumpy-mood"><a>grumpy.</a></li>
+        <li  id="stressed-mood"><a>stressed.</a></li>
+      </ul>  
+    </nav>
+
+  </header>
+
+  <main class="row" id="suggestion-bubbles">
+
+    <div id="suggestions1"></div>
+    <div id="suggestions2"></div>
+    <div id="suggestions3"></div>
+    <div id="suggestions4"></div>
+    <div id="suggestions5"></div>
+
+    <!-- Suggestion Containers will go here -->
+    <!--  <div class="row">
               <div class="col-sm-2">
                   <div class="card" stye="width: 18rem;">
                             
@@ -59,13 +73,13 @@
                       </div>
                   </div>
             </div> -->
-            
-          </main>
 
-          <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-          <script src="script.js"></script>
-        
-    </body>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
 
 </html>
