@@ -158,7 +158,7 @@ function displayHangrySuggestions() {
 
 
     // tmdb api search chef
-    queryURL = "https://api.themoviedb.org/3/search/multi?api_key=97b221ffbf12db5db8bf8eae9e080354&language=en-US&query=chef&page=1&include_adult=false"
+    queryURL = "https://api.themoviedb.org/3/search/tv?api_key=97b221ffbf12db5db8bf8eae9e080354&language=en-US&page=1&query=chef&include_adult=false"
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -172,7 +172,7 @@ function displayHangrySuggestions() {
             $(".suggestions5").empty();
 
     
-            var suggestTitle =$("<h2 class='suggest-title'>").text("How about a show about")
+            var suggestTitle =$("<h2 class='suggest-title'>").text("Let's watch someone cook!")
             var row = $("<div class='level'>")
     
             for (var i = 0; i < 5; i++){
@@ -181,7 +181,8 @@ function displayHangrySuggestions() {
             
                 var col = $("<div class='level-right movie-col'>")
                 var card = $("<div class='card'>")
-                var movieTitle = response.results[randomIndex].original_title
+
+                var movieTitle = response.results[randomIndex].original_name
                 var h5 = $("<h5 class='card-header-title'>").text(movieTitle)
                 var moviePoster = response.results[randomIndex].poster_path
                 var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
@@ -199,14 +200,51 @@ function displayHangrySuggestions() {
     
                 $(".suggestions1").append(suggestTitle)
                 $(".suggestions1").append(row)
-            
-
-                
-            
             }
-    
-    
         });
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://youtube-search1.p.rapidapi.com/primitive%2520survival%2520skills",
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "youtube-search1.p.rapidapi.com",
+                "x-rapidapi-key": "16213a7de1msh6df8c4fb25bd36ep1bd4e2jsncd1b38d57e57"
+            }
+        }
+        
+        var suggestTitle =$("<h2 class='suggest-title'>").text("Let's learn how to forge for food!")
+        var row = $("<div class='level'>")
+
+        //youtube for survival skilss
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        
+            for (var i = 0; i < 5; i++){
+        
+                var randomIndex = Math.floor(Math.random()* response.items.length)
+
+                var col = $("<div class='level-right movie-col'>")
+                var cardYh = $("<div class='card'>")
+                
+                var videoImage = (response.items[randomIndex].thumbAnim)
+                var videoTitle = (response.items[randomIndex].channelTitle)
+                
+                var videoUrl = (response.items[randomIndex].channelUrl)
+        
+                var videoImg = $("<img>").attr("src", videoImage)
+                var titleP = $("<h5 class='card-header-title'>").text(videoTitle)
+                
+                var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More") 
+
+                cardYh.append(titleP, videoImg, learnMore)
+                col.append(card)
+                row.append(col)
+    
+                $(".suggestions2").append(suggestTitle)
+                $(".suggestions2").append(row)
+            }
 }
 
 function displayDistractedSuggestions() {
@@ -298,6 +336,7 @@ function displayGrumpySuggestions() {
                 //var para1 = $("<p class='plot'>").text(moviePlot)
                 var movieRating = response.results[randomIndex].vote_average
                 var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
+                
                 var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
     
                 card.append(h5, movieImg, ratingP, learnMore)
