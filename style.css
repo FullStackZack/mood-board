@@ -49,6 +49,10 @@ strong {
     margin-top: -12px;
 }
 
+.moodii-home {
+    color: black;
+}
+
 .notification-1 {
     font-family: 'Quicksand', sans-serif;
     background-color: white;
@@ -97,20 +101,17 @@ h3 {
 }
 
 img {
-    border-radius: 50px;
+    border-radius: 25px;
+    padding: 20px;
     width: 250px;
     height: auto;
-    padding: 25px;
+    margin-top: -10px;
 }
 
 .plot {
     font-size: 12px;
 }
 
-.movie-title {
-    font-size: 20px;
-    text-align: center;
-}
 
 .joke-question {
     font-size: 28px;
@@ -125,14 +126,17 @@ img {
     margin-right: 350px;
     justify-content: center;
     text-align: center;
+    padding: 30px;
+}
+
+.movie-col {
 }
 
 .card {
     border-radius: 20px;
-    margin: 20px;
     align-content: center;
     width: 80%;
-    height: 450px;
+    padding: 15px;
 }
 
 .suggest-title {
@@ -142,6 +146,13 @@ img {
     font-weight: bolder;
     color: rgb(119, 116, 116);
     font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+.card-header-title {
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bolder;
 }
 
 .rating {
@@ -150,9 +161,7 @@ img {
     font-family: 'Quicksand', sans-serif;
 }
 
-button#learn-more {
+button.learn-more {
     border-radius: 25px;
-    margin-top: 5px;
-    margin-left: 20px;
     background-color: rgba(53, 140, 226, 0.9);
 }
