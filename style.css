@@ -1,5 +1,5 @@
 html {
-    background-color: rgba(158, 155, 157, 0.2);
+    background-color: rgba(158, 158, 155, 0.2);
 }
 
 header{
@@ -57,6 +57,10 @@ strong {
     font-family: 'Quicksand', sans-serif;
     background-color: white;
     border-radius: 100px;
+    border-style: solid;
+    border-color: rgb(197, 195, 195, 0.8);
+    border-width: 2px;
+    border-radius: 50px;
     height: 100px;
     width: 85%;
     margin-bottom: 20px;
@@ -78,6 +82,9 @@ li{
 #moods {
     font-family: 'Quicksand', sans-serif;
     background-color: white;
+    border-style: solid;
+    border-color: rgb(197, 195, 195, 0.8);
+    border-width: 2px;
     border-radius: 100px;
     justify-content: center;
     height: 40px;
@@ -149,14 +156,27 @@ img {
 .suggest-title {
     margin: 20px;
     font-size: 24px;
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(119, 116, 116);
+    font-family: 'Quicksand', sans-serif;
+}
+
+.rating {
+    font-size: 14px;
     font-style: italic;
-
-
 }
 
 #suggestion-bubbles {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    font-family: 'Quicksand', sans-serif;
+}
 
+button#learn-more {
+    border-radius: 25px;
+    margin-top: 5px;
+    margin-left: 20px;
+    background-color: rgba(53, 140, 226, 0.9);
 }
