@@ -2,6 +2,12 @@ html {
     background-color: rgba(158, 158, 155, 0.2);
 }
 
+header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 h1 {
     text-align: center;
     font-size: 100px;
@@ -15,14 +21,12 @@ h5{
 }
 
 .notification {
-    width: 45%;
+    width: 65%;
     background-color: white;
     color: rgb(107, 110, 114);
     text-align: center;
     border-radius: 100px;
-    margin-left: 400px;
-    margin-right: 400px;
-    margin-top: -100px;
+    align-self: center;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -52,14 +56,27 @@ strong {
 .notification-1 {
     font-family: 'Quicksand', sans-serif;
     background-color: white;
+    border-radius: 100px;
     border-style: solid;
     border-color: rgb(197, 195, 195, 0.8);
     border-width: 2px;
     border-radius: 50px;
-    margin-top: -80px;
-    margin-left: 250px;
-    margin-right: 250px;
     height: 100px;
+    width: 85%;
+    margin-bottom: 20px;
+    align-self: center;
+
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    display: inline;
+    padding: 5px;
 }
 
 #moods {
@@ -69,11 +86,12 @@ strong {
     border-color: rgb(197, 195, 195, 0.8);
     border-width: 2px;
     border-radius: 100px;
-    margin-left: 350px;
-    margin-right: 350px;
+    justify-content: center;
     height: 40px;
     text-align: center;
-    justify-content: center;
+   align-self: center;
+    width: 65%;
+    padding: 10px;
 }
 
 .mood-swing {
@@ -121,22 +139,22 @@ img {
 }
 
 .level {
-    margin-left: 350px;
-    margin-right: 350px;
     justify-content: center;
     text-align: center;
+    flex-wrap: wrap;
+
 }
 
 .card {
     border-radius: 20px;
     margin: 20px;
     align-content: center;
-    width: 80%;
+    width: 300px;
     height: 450px;
 }
 
 .suggest-title {
-    margin-left: 125px;
+    margin: 20px;
     font-size: 24px;
     text-align: center;
     font-weight: bolder;
@@ -147,6 +165,12 @@ img {
 .rating {
     font-size: 14px;
     font-style: italic;
+}
+
+#suggestion-bubbles {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     font-family: 'Quicksand', sans-serif;
 }
 

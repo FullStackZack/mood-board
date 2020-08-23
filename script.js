@@ -187,7 +187,7 @@ function displayHangrySuggestions() {
 
 
     // tmdb api search chef
-    queryURL = "https://api.themoviedb.org/3/search/multi?api_key=97b221ffbf12db5db8bf8eae9e080354&language=en-US&query=chef&page=1&include_adult=false"
+    queryURL = "https://api.themoviedb.org/3/search/multi?api_key=97b221ffbf12db5db8bf8eae9e080354&language=en-US&with_original_language=en&with_genres=12,28&query=chef"
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -262,7 +262,7 @@ function displayFlirtySuggestions() {
         
             var randomIndex = Math.floor(Math.random() * response.results.length)
         
-            var col = $("<div class='level-right'>")
+            var col = $("<div class='level'>")
             var card = $("<div class='card'>")
             var movieTitle = response.results[randomIndex].original_title
             var h5 = $("<h5 class='card-header-title'>").text(movieTitle)
