@@ -324,6 +324,53 @@ function displayHangrySuggestions() {
 
 
     });
+  
+     var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://youtube-search1.p.rapidapi.com/primitive%2520survival%2520skills",
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "youtube-search1.p.rapidapi.com",
+                "x-rapidapi-key": "16213a7de1msh6df8c4fb25bd36ep1bd4e2jsncd1b38d57e57"
+            }
+        }
+        
+        var suggestTitle =$("<h2 class='suggest-title'>").text("Let's learn how to forge for food!")
+        var row = $("<div class='level'>")
+
+        //youtube for survival skilss
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        
+            for (var i = 0; i < 5; i++){
+        
+                var randomIndex = Math.floor(Math.random()* response.items.length)
+
+                var col = $("<div class='level-right movie-col'>")
+                var cardYh = $("<div class='card'>")
+                
+                var videoImage = (response.items[randomIndex].thumbAnim)
+                var videoTitle = (response.items[randomIndex].channelTitle)
+                
+                var videoUrl = (response.items[randomIndex].channelUrl)
+        
+                var videoImg = $("<img>").attr("src", videoImage)
+                var titleP = $("<h5 class='card-header-title'>").text(videoTitle)
+                
+                var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More") 
+
+                cardYh.append(titleP, videoImg, learnMore)
+                col.append(card)
+                row.append(col)
+    
+                $(".suggestions2").append(suggestTitle)
+                $(".suggestions2").append(row)
+
+        }
+
+
+    });
 }
 
 function displayDistractedSuggestions() {
@@ -476,7 +523,6 @@ function displayGrumpySuggestions() {
 
             $(".suggestions1").append(suggestTitle)
             $(".suggestions1").append(row)
-
         }
 
 
