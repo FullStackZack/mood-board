@@ -2,6 +2,13 @@ html {
     background-color: rgba(158, 158, 155, 0.2);
 }
 
+header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
 h1 {
     text-align: center;
     font-size: 100px;
@@ -15,14 +22,12 @@ h5{
 }
 
 .notification {
-    width: 45%;
+    width: 65%;
     background-color: white;
     color: rgb(107, 110, 114);
     text-align: center;
     border-radius: 100px;
-    margin-left: 400px;
-    margin-right: 400px;
-    margin-top: -100px;
+    align-self: center;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -54,30 +59,42 @@ strong {
 }
 
 .notification-1 {
-    font-family: 'Quicksand', sans-serif;
-    background-color: white;
-    border-style: solid;
-    border-color: rgb(197, 195, 195, 0.8);
-    border-width: 2px;
-    border-radius: 50px;
-    margin-top: -80px;
-    margin-left: 250px;
-    margin-right: 250px;
-    height: 100px;
-}
-
-#moods {
+    width: 85%;
     font-family: 'Quicksand', sans-serif;
     background-color: white;
     border-style: solid;
     border-color: rgb(197, 195, 195, 0.8);
     border-width: 2px;
     border-radius: 100px;
-    margin-left: 350px;
-    margin-right: 350px;
-    height: 40px;
-    text-align: center;
+    height: 100px;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+#moods {
+    background-color: white;
+    border: rgb(197, 195, 195, 0.8);
+    border-style: solid;    
+    border-width: 2px;
+    border-radius: 100px;
     justify-content: center;
+    height: 55px;
+    text-align: center;
+    align-self: center;
+    width: 65%;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    display: inline;
+    padding: 5px;
 }
 
 .mood-swing {
@@ -85,6 +102,7 @@ strong {
     font-family: 'Quicksand', sans-serif;
     font-size: 24px;;
 }
+
 
 
 p {
@@ -105,6 +123,7 @@ img {
     padding: 20px;
     width: 250px;
     height: auto;
+    padding: 25px;
     margin-top: -10px;
 }
 
@@ -122,25 +141,23 @@ img {
 }
 
 .level {
-    margin-left: 350px;
-    margin-right: 350px;
     justify-content: center;
     text-align: center;
-    padding: 30px;
-}
-
-.movie-col {
+    flex-wrap: wrap;
 }
 
 .card {
     border-radius: 20px;
-    align-content: center;
-    width: 80%;
-    padding: 15px;
+    margin: 20px;
+   justify-content: center;
+    width: 300px;
+    height: 525px;
 }
 
 .suggest-title {
-    margin-left: 125px;
+    margin: 20px;
+    font-size: 24px;
+    font-style: italic;
     font-size: 24px;
     text-align: center;
     font-weight: bolder;
@@ -149,19 +166,30 @@ img {
     font-weight: bold;
 }
 
-.card-header-title {
+
+.card-header-title{
     justify-content: center;
+    font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     font-weight: bolder;
+    text-align: center;
+
 }
 
 .rating {
     font-size: 14px;
     font-style: italic;
+}
+
+#suggestion-bubbles {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     font-family: 'Quicksand', sans-serif;
 }
 
-button.learn-more {
+#learn-more {
     border-radius: 25px;
+   margin: 20px;
     background-color: rgba(53, 140, 226, 0.9);
 }

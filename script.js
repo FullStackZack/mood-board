@@ -15,11 +15,11 @@ function displayChipperSuggestions() {
             console.log(response)
 
      
-            $("#suggestions1").empty();
-            $("#suggestions2").empty();
-            $("#suggestions3").empty();
-            $("#suggestions4").empty();
-            $("#suggestions5").empty();
+            $(".suggestions1").empty();
+            $(".suggestions2").empty();
+            $(".suggestions3").empty();
+            $(".suggestions4").empty();
+            $(".suggestions5").empty();
     
             var suggestTitle =$("<h2 class='suggest-title'>").text("Check out one of these kicka$$ movies...")
             var row = $("<div class='level'>")
@@ -36,19 +36,19 @@ function displayChipperSuggestions() {
                 var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
                     
                 var movieImg = $("<img>").attr("src", imageURL)
-                //var moviePlot =(response.results[randomIndex].overview)
+                        //var moviePlot =(response.results[randomIndex].overview)
                 //var para1 = $("<p class='plot'>").text(moviePlot)
-                var learnMore = $("<button type='submit' class='pure-button pure-button-primary learn-more'>").text("Learn More")
                 var movieRating = response.results[randomIndex].vote_average
                 var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
+                var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
     
                 card.append(h5, movieImg, ratingP, learnMore)
                 col.append(card)
                 row.append(col)
     
-                $("#suggestions1").append(suggestTitle)
-                $("#suggestions1").append(row)
-            
+                $(".suggestions1").append(suggestTitle)
+                $(".suggestions1").append(row)
+                        
             }
     
     
@@ -79,19 +79,19 @@ function displayChipperSuggestions() {
                     var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
                         
                     var movieImg = $("<img>").attr("src", imageURL)
-                    //var moviePlot =(response.results[randomIndex].overview)
-                    //var para1 = $("<p class='plot'>").text(moviePlot)
-                    var learnMore = $("<button type='submit' class='pure-button pure-button-primary learn-more'>").text("Learn More")
-                    var movieRating = response.results[randomIndex].vote_average
-                    var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
-
-        
-                    card.append(h5, movieImg, ratingP, learnMore)
-                    col.append(card)
-                    row.append(col)
-        
-                    $("#suggestions2").append(suggestTitle)
-                    $("#suggestions2").append(row)
+                           //var moviePlot =(response.results[randomIndex].overview)
+                //var para1 = $("<p class='plot'>").text(moviePlot)
+                var movieRating = response.results[randomIndex].vote_average
+                var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
+                var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
+    
+                card.append(h5, movieImg, ratingP, learnMore)
+                col.append(card)
+                row.append(col)
+    
+                $(".suggestions2").append(suggestTitle)
+                $(".suggestions2").append(row)
+            
                 
                 }
         
@@ -114,11 +114,11 @@ function displayCuriousSuggestions() {
             console.log(response)
 
      
-            $("#suggestions1").empty();
-            $("#suggestions2").empty();
-            $("#suggestions3").empty();
-            $("#suggestions4").empty();
-            $("#suggestions5").empty();
+            $(".suggestions1").empty();
+            $(".suggestions2").empty();
+            $(".suggestions3").empty();
+            $(".suggestions4").empty();
+            $(".suggestions5").empty();
 
     
             var suggestTitle =$("<h2 class='suggest-title'>").text("Sink in to one of these true crime documentaries...")
@@ -136,19 +136,18 @@ function displayCuriousSuggestions() {
                 var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
                     
                 var movieImg = $("<img>").attr("src", imageURL)
-                //var moviePlot =(response.results[randomIndex].overview)
+                     //var moviePlot =(response.results[randomIndex].overview)
                 //var para1 = $("<p class='plot'>").text(moviePlot)
-                var learnMore = $("<button type='submit' class='pure-button pure-button-primary learn-more'>").text("Learn More")
                 var movieRating = response.results[randomIndex].vote_average
                 var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
+                var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
     
                 card.append(h5, movieImg, ratingP, learnMore)
                 col.append(card)
                 row.append(col)
     
-                $("#suggestions1").append(suggestTitle)
-                $("#suggestions1").append(row)
-            
+                $(".suggestions1").append(suggestTitle)
+                $(".suggestions1").append(row)
             }
     
     
@@ -166,11 +165,11 @@ function displayHangrySuggestions() {
         }).then(function (response) {
             console.log(response)
     
-            $("#suggestions1").empty();
-            $("#suggestions2").empty();
-            $("#suggestions3").empty();
-            $("#suggestions4").empty();
-            $("#suggestions5").empty();
+            $(".suggestions1").empty();
+            $(".suggestions2").empty();
+            $(".suggestions3").empty();
+            $(".suggestions4").empty();
+            $(".suggestions5").empty();
 
     
             var suggestTitle =$("<h2 class='suggest-title'>").text("How about a show about")
@@ -188,18 +187,21 @@ function displayHangrySuggestions() {
                 var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
                     
                 var movieImg = $("<img>").attr("src", imageURL)
-                //var moviePlot =(response.results[randomIndex].overview)
+                        //var moviePlot =(response.results[randomIndex].overview)
                 //var para1 = $("<p class='plot'>").text(moviePlot)
                 var movieRating = response.results[randomIndex].vote_average
                 var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
-                var learnMore = $("<button type='submit' class='pure-button pure-button-primary learn-more'>").text("Learn More")
+                var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
     
                 card.append(h5, movieImg, ratingP, learnMore)
                 col.append(card)
                 row.append(col)
     
-                $("#suggestions1").append(suggestTitle)
-                $("#suggestions1").append(row)
+                $(".suggestions1").append(suggestTitle)
+                $(".suggestions1").append(row)
+            
+
+                
             
             }
     
@@ -220,11 +222,11 @@ function displayFlirtySuggestions() {
     }).then(function (response) {
         console.log(response)
 
-        $("#suggestions1").empty();
-        $("#suggestions2").empty();
-        $("#suggestions3").empty();
-        $("#suggestions4").empty();
-        $("#suggestions5").empty();
+        $(".suggestions1").empty();
+        $(".suggestions2").empty();
+        $(".suggestions3").empty();
+        $(".suggestions4").empty();
+        $(".suggestions5").empty();
 
         var suggestTitle =$("<h2 class='suggest-title'>").text("Cuddle up & watch a Rom-Dram...")
         var row = $("<div class='level'>")
@@ -241,19 +243,18 @@ function displayFlirtySuggestions() {
             var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
                 
             var movieImg = $("<img>").attr("src", imageURL)
-            //var moviePlot =(response.results[randomIndex].overview)
-            //var para1 = $("<p class='plot'>").text(moviePlot)
-            var movieRating = response.results[randomIndex].vote_average
-            var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
-            var learnMore = $("<button type='submit' class='pure-button pure-button-primary learn-more'>").text("Learn More")
-
-            card.append(h5, movieImg, ratingP, learnMore)
-            col.append(card)
-            row.append(col)
-
-            $("#suggestions1").append(suggestTitle)
-            $("#suggestions1").append(row)
-        
+                //var moviePlot =(response.results[randomIndex].overview)
+                //var para1 = $("<p class='plot'>").text(moviePlot)
+                var movieRating = response.results[randomIndex].vote_average
+                var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
+                var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
+    
+                card.append(h5, movieImg, ratingP, learnMore)
+                col.append(card)
+                row.append(col)
+    
+                $(".suggestions1").append(suggestTitle)
+                $(".suggestions1").append(row)
         }
 
         
@@ -272,11 +273,11 @@ function displayGrumpySuggestions() {
         console.log(response)
 
         console.log(response.list)
-        $("#suggestions1").empty();
-        $("#suggestions2").empty();
-        $("#suggestions3").empty();
-        $("#suggestions4").empty();
-        $("#suggestions5").empty();
+        $(".suggestions1").empty();
+        $(".suggestions2").empty();
+        $(".suggestions3").empty();
+        $(".suggestions4").empty();
+        $(".suggestions5").empty();
 
         var suggestTitle =$("<h2 class='suggest-title'>").text("How about an exc...")
         var row = $("<div class='level'>")
@@ -293,19 +294,18 @@ function displayGrumpySuggestions() {
             var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
                 
             var movieImg = $("<img>").attr("src", imageURL)
-            //var moviePlot =(response.results[randomIndex].overview)
-            //var para1 = $("<p class='plot'>").text(moviePlot)
-            var movieRating = response.results[randomIndex].vote_average
-            var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
-            var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
-
-            card.append(h5, movieImg, ratingP, learnMore)
-            col.append(card)
-            row.append(col)
-
-            $("#suggestions1").append(suggestTitle)
-            $("#suggestions1").append(row)
-        
+                  //var moviePlot =(response.results[randomIndex].overview)
+                //var para1 = $("<p class='plot'>").text(moviePlot)
+                var movieRating = response.results[randomIndex].vote_average
+                var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
+                var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
+    
+                card.append(h5, movieImg, ratingP, learnMore)
+                col.append(card)
+                row.append(col)
+    
+                $(".suggestions1").append(suggestTitle)
+                $(".suggestions1").append(row)
         }
 
 
