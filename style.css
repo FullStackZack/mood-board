@@ -143,20 +143,35 @@ img {
     margin: 20px;
     align-content: center;
     width: 300px;
-    height: 450px;
+    height: 525px;
 }
 
 .suggest-title {
     margin: 20px;
     font-size: 24px;
     font-style: italic;
+}
 
 
+.card-header-title{
+    font-family: 'Quicksand', sans-serif;
+text-align: center;
+
+}
+
+.rating {
+    font-size: 14px;
+    font-style: italic;
 }
 
 #suggestion-bubbles {
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
 
+#learn-more {
+    border-radius: 25px;
+   margin: 20px;
+    background-color: rgba(53, 140, 226, 0.9);
 }
