@@ -1,6 +1,4 @@
-$("#goBtn").on("click", function () {
-
-    window.location.href="moodi.html";
+$("goBtn").on("click", function () {
 })
 
 $(".moodi-2").on("click", function () {
@@ -26,7 +24,7 @@ function displayChipperSuggestions() {
         $(".suggestions4").empty();
         $(".suggestions5").empty();
 
-        var suggestTitle = $("<h2 class='suggest-title'>").text("Check out one of these kicka$$ hit movies...")
+        var suggestTitle = $("<h2 class='suggest-title'>").text("Check out one of these kicka$$ movies...")
         var row = $("<div class='level'>")
         var j = 0
 
@@ -85,76 +83,8 @@ function displayChipperSuggestions() {
 
 
         }
-    
-    });
-
-    var movieQueryURL = "https://api.themoviedb.org/3/discover/movie?&popular?&primary_release_year=2019&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=35,18"
-    $.ajax({
-        url: movieQueryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response)
-
-        var suggestTitle = $("<h2 class='suggest-title'>").text("OR maybe go with a critically-acclaimed drama...")
-        var row = $("<div class='level'>")
-        var j = 0
-
-        movieList = []
-
-        for (let index = 0; index < 5; index++) {
-
-            var randomIndex = Math.floor(Math.random() * 5)
-
-            //console.log(response.results[randomIndex])
-            //  movieList.push(response.results[randomIndex])
-
-            var id = response.results[randomIndex].id
-            console.log(movieList)
-            j = 0
-            while (movieList.findIndex(i => i.id === id) > -1) {
-
-                randomIndex = Math.floor(Math.random() * response.results.length)
-                id = response.results[randomIndex].id
-                console.log(id)
-                j++
-            }
-
-            movieList.push(response.results[randomIndex])
-
-        }
 
 
-
-        for (var i = 0; i < movieList.length; i++) {
-
-
-            var movieTitle = movieList[i].original_title
-            var col = $("<div class='level-right movie-col'>")
-            var card = $("<div class='card'>")
-
-            var h5 = $("<h5 class='card-header-title'>").text(movieTitle)
-            var moviePoster = movieList[i].poster_path
-            var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
-
-            var movieImg = $("<img>").attr("src", imageURL)
-            //var moviePlot =(response.results[randomIndex].overview)
-            //var para1 = $("<p class='plot'>").text(moviePlot)
-            var movieRating = movieList[i].vote_average
-            var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
-            var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
-
-            card.append(h5, movieImg, ratingP, learnMore)
-            col.append(card)
-            row.append(col)
-
-            // if (movieList[j].original_title.includes(movieTitle) === false ) {
-            $(".suggestions2").append(suggestTitle)
-            $(".suggestions2").append(row)
-            //}
-
-
-        }
-    
     });
 
     var tvQueryURL = "https://api.themoviedb.org/3/discover/tv?&original_air_date=2019&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=35,18"
@@ -220,8 +150,8 @@ function displayChipperSuggestions() {
             col.append(card)
             row.append(col)
 
-            $(".suggestions3").append(suggestTitle)
-            $(".suggestions3").append(row)
+            $(".suggestions2").append(suggestTitle)
+            $(".suggestions2").append(row)
 
 
         }
@@ -320,7 +250,7 @@ function displayHangrySuggestions() {
 
 
     // tmdb api search chef
-    queryURL = "https://api.themoviedb.org/3/search/multi?api_key=97b221ffbf12db5db8bf8eae9e080354&withlanguage=en-US&query=chef&page=1&include_adult=false"
+    queryURL = "https://api.themoviedb.org/3/search/multi?api_key=97b221ffbf12db5db8bf8eae9e080354&language=en-US&query=chef&page=1&include_adult=false"
     $.ajax({
         url: queryURL,
         method: "GET"
