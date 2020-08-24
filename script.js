@@ -188,7 +188,7 @@ function displayHangrySuggestions() {
                 var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
                     
                 var movieImg = $("<img>").attr("src", imageURL)
-                        //var moviePlot =(response.results[randomIndex].overview)
+                //var moviePlot =(response.results[randomIndex].overview)
                 //var para1 = $("<p class='plot'>").text(moviePlot)
                 var movieRating = response.results[randomIndex].vote_average
                 var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
@@ -203,6 +203,7 @@ function displayHangrySuggestions() {
             }
         });
 
+         //youtube for survival skilss
         var settings = {
             "async": true,
             "crossDomain": true,
@@ -217,7 +218,7 @@ function displayHangrySuggestions() {
         var suggestTitle =$("<h2 class='suggest-title'>").text("Let's learn how to forge for food!")
         var row = $("<div class='level'>")
 
-        //youtube for survival skilss
+    
         $.ajax(settings).done(function (response) {
             console.log(response);
         
@@ -246,6 +247,23 @@ function displayHangrySuggestions() {
             }
             
         });
+
+        //tripadvisor close places to eat
+
+        var suggestTitle =$("<h2 class='suggest-title'>").text("Find Somewhere Close by to Eat!")
+        var row = $("<div class='level'>")
+        var card = $("<div class='card'>")
+        var hungryQus = $("<h5>").text("Still Hangry?")
+        var findRest = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Click Here to Find a Restaurant") 
+    
+     
+        card.append(hungryQus, findRest)
+        row.append(card)
+
+        $(".suggestions3").append(suggestTitle)
+        $(".suggestions3").append(row)
+
+
 }
 
 function displayDistractedSuggestions() {

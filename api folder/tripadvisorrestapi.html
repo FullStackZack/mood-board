@@ -15,8 +15,8 @@
 
 <div id="viewAPI"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
 
 function geoFindMe() {
 
@@ -58,8 +58,8 @@ $.ajax(settings).done(function (response) {
         var restuarantPhone = (response.data[randomIndex].phone)
 
         var p1 = $("<p>").text(restuarantName)
-            var p2 = $("<p>").text(restuarantAddress)
-                var p3 = $("<p>").text(restuarantPhone)
+        var p2 = $("<p>").text(restuarantAddress)
+        var p3 = $("<p>").text(restuarantPhone)
 
         $("#viewAPI").append(p1, p2, p3)
 
