@@ -232,6 +232,75 @@ function displayChipperSuggestions() {
 
 function displayBummedSuggestions() {
 
+    var tvQueryURL = "https://api.themoviedb.org/3/discover/tv?&original_air_date=2019&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=35"
+
+    $.ajax({
+        url: tvQueryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response)
+
+        var suggestTitle = $("<h2 class='suggest-title'>").text("Relax and watch one of these comedies...")
+        var row = $("<div class='level'>")
+
+        var j = 0
+
+        tvList = []
+
+        for (let index = 0; index < 5; index++) {
+
+            var randomIndex = Math.floor(Math.random() * 5)
+
+            //console.log(response.results[randomIndex])
+            //  movieList.push(response.results[randomIndex])
+
+            var id = response.results[randomIndex].id
+            console.log(tvList)
+            j = 0
+            while (tvList.findIndex(i => i.id === id) > -1) {
+
+                randomIndex = Math.floor(Math.random() * response.results.length)
+                id = response.results[randomIndex].id
+                console.log(id)
+                j++
+            }
+
+            tvList.push(response.results[randomIndex])
+
+        }
+
+        for (var i = 0; i < 5; i++) {
+
+          
+
+            var col = $("<div class='level-right movie-col'>")
+            var card = $("<div class='card'>")
+            var movieTitle = tvList[i].original_name
+            var h5 = $("<h5 class='card-header-title'>").text(movieTitle)
+            var moviePoster = tvList[i].poster_path
+            var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
+
+            var movieImg = $("<img>").attr("src", imageURL)
+            //var moviePlot =(response.results[randomIndex].overview)
+            //var para1 = $("<p class='plot'>").text(moviePlot)
+            var movieRating = tvList[i].vote_average
+            var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
+            var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
+
+            card.append(h5, movieImg, ratingP, learnMore)
+            col.append(card)
+            row.append(col)
+
+            $(".suggestions3").append(suggestTitle)
+            $(".suggestions3").append(row)
+
+
+        }
+
+
+    });
+
+
 }
 
 function displayCuriousSuggestions() {
