@@ -4,7 +4,15 @@
 User Story
 -------------------------------------
 
-AS A user
+As a user
+I want to be able to enter my name on the homepage and select from mood choices available
+I want to select from different movies when I am feeling chipper
+I want to select from different comedies when I am feeling bummed
+I want to select from different documentaries when I am curious
+I want to select from different shows when I am hangry
+I want to select from different romantic drama series when I am feeling flirty
+
+
 I WANT to view suggestions on how I could go about my day based on my mood
 I WANT to see my daily horoscope reading & other astrology features based on my zodiac sign
 I WANT to read inspiring quotes or funny jokes
