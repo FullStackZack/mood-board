@@ -1,55 +1,103 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Sora:wght@100&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <title>Moodii. | Home</title>
+  <!-- Bulma Stylesheet Link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 
-    </head>
 
-    <body>
-        <br>
-        <h1>Moodii.</h1>
-        <div class="container">
-            <div class="notification">
-                <p class="hi">hi.</p>
-                <p>let's get started.</p>
-                <br>
-                <strong>tell us your name</strong>
-                <form class="pure-form">
-                    <input type="text" class="pure-input-rounded" id="name-input"/>
-                </form>
-                <br>
-                <strong>how are you feeling?</strong>
-                <form class="pure-form">
-                    <select id="stacked-state">
-                        <option class="chipper">chipper.</option>
-                        <option class="bummed">bummed.</option>
-                        <option class="curious">curious.</option>
-                        <option class="hangry">hangry.</option>
-                        <option class="distracted">distracted.</option>
-                        <option class="flirty">flirty.</option>
-                        <option class="grumpy">grumpy.</option>
-                        <option class="stressed">stressed.</option>
-                     </select>
-                </form>
-                <br>
-                <button type="submit" class="pure-button pure-button-primary" id="goBtn">GO</button>
-            </div>
-        </div>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
 
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="script.js"></script>
-        
-    </body>
+  <!-- Google Fonts Stylesheet  -->
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Sora:wght@100&display=swap"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    
+ <!-- Base Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Moodii. | Home</title>
+
+</head>
+
+
+<body>
+   <!-- Modal Trigger -->
+   <div class="modal">
+    
+    <div class="modal-content" style="height: 100%;width:100%">
+      <!-- Any other Bulma elements you want -->
+      <h2><span class="modal-title"></span></h2>
+      <hr>
+      <p><span class="modal-plot"></span></p>
+    </div>
+   
+  </div>
+
+  <header>
+    <h1>Moodii.</h1>
+
+    <div class="notification-1">
+      <h3>Hi, how ya feelin'?</h3>
+    </div>
+
+    <p class="mood-swing">MOOD SWINGS</p>
+
+    <nav id="moods" class="level-item">
+      <ul>
+        <li  id="chipper-mood"><a>chipper.</a></li>
+        <li  id="bummed-mood"><a>bummed.</a></li>
+        <li id="curious-mood"><a>curious.</a></li>
+        <li  id="hangry-mood"><a>hangry.</a></li>
+        <li id="distracted-mood"><a>distracted.</a></li>
+        <li  id="flirty-mood"><a>flirty.</a></li>
+        <li id="grumpy-mood"><a>grumpy.</a></li>
+        <li  id="stressed-mood"><a>stressed.</a></li>
+      </ul>  
+    </nav>
+
+  </header>
+
+  <main class="row" id="suggestion-bubbles">
+
+    <div class="suggestions1"></div>
+    <div class="suggestions2"></div>
+    <div class="suggestions3"></div>
+    <div class="suggestions4"></div>
+    <div class="suggestions5"></div>
+
+    <!-- Suggestion Containers will go here -->
+    <!--  <div class="row">
+              <div class="col-sm-2">
+                  <div class="card" stye="width: 18rem;">
+                            
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <img src="..." class="card-img-top" alt="...">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                  </div>
+            </div> -->
+            
+
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+     
+  <script src="script.js"></script>
+
+</body>
 
 </html>
