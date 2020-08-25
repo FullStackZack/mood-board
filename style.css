@@ -9,53 +9,19 @@ header {
     
 }
 
+#logo {
+    margin: 0px;
+}
+
 h1 {
     text-align: center;
     font-size: 100px;
     font-family: 'Sacramento', cursive;
 }
 
-
 h5{
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
-}
-
-.notification {
-    width: 65%;
-    background-color: white;
-    color: rgb(107, 110, 114);
-    text-align: center;
-    border-radius: 100px;
-    align-self: center;
-    font-family: 'Quicksand', sans-serif;
-}
-
-input {
-    text-align: center;
-}
-
-.hi {
-    font-style: italic;
-    font-size: 35px;
-}
-
-.pure-button {
-    background-color: rgb(123, 170, 218);
-    border-radius: 25px;
-}
-
-strong {
-    font-size: 15px;
-}
-
-.moodi-2 {
-    font-size: 80px;
-    margin-top: -12px;
-}
-
-.moodii-home {
-    color: black;
 }
 
 .notification-1 {
@@ -104,8 +70,6 @@ li{
     font-size: 24px;;
 }
 
-
-
 p {
     font-weight: bold;
     font-size: 18px;
@@ -126,19 +90,6 @@ img {
     height: auto;
     padding: 25px;
     margin-top: -10px;
-}
-
-.plot {
-    font-size: 12px;
-}
-
-
-.joke-question {
-    font-size: 28px;
-}
-
-.dad-joke {
-    font-style: italic;
 }
 
 .level {
@@ -194,14 +145,16 @@ img {
     margin: 10px;
 }
 
-.modal-title {
+h2 {
     font-family: 'Quicksand', sans-serif;
     font-size: 24px;
+    text-align: center;
 }
 
 .modal-plot {
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
+    text-align: left;
 }
 
 @media screen and (max-width: 550px) {
@@ -219,10 +172,14 @@ img {
         border-width: 2px;
         border-radius: 100px;
         justify-content: center;
-        height: 100px;
+        height: 140px;
         text-align: center;
         align-self: center;
         width: 65%;
         margin-top: 20px;
+    }
+
+    .movie-col {
+        width: 90%;
     }
 }
