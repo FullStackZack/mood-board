@@ -159,6 +159,11 @@ h2 {
 
 .footer {
     visibility: hidden;
+    height: 200px;
+}
+
+.footer p {
+    font-size: 14px;
 }
 
 @media screen and (max-width: 550px) {
@@ -185,6 +190,13 @@ h2 {
 
     .movie-col {
         width: 90%;
+    }
+
+    .footer {
+        height: auto;
+    }
+    .footer p {
+        font-size: 10px;
     }
 
 }
