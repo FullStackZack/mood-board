@@ -1,5 +1,3 @@
-var movieList = []
-var tvList = []
 function displayChipperSuggestions() {
 
     var movieQueryURL = "https://api.themoviedb.org/3/discover/movie?&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=28,12"
@@ -17,20 +15,16 @@ function displayChipperSuggestions() {
 
         var suggestTitle = $("<h2 class='suggest-title'>").text("Great! Check out one of these kicka$$ hits.")
         var row = $("<div class='level'>")
-        var j = 0
 
-        movieList = []
+        var movieList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(movieList)
-            j = 0
+            var j = 0
             while (movieList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -42,8 +36,6 @@ function displayChipperSuggestions() {
             movieList.push(response.results[randomIndex])
 
         }
-
-
 
         for (var i = 0; i < movieList.length; i++) {
 
@@ -93,20 +85,17 @@ function displayChipperSuggestions() {
 
         var suggestTitle = $("<h2 class='suggest-title'>").text("OR go with a critically-acclaimed drama!")
         var row = $("<div class='level'>")
-        var j = 0
 
-        movieList = []
+        var movieList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(movieList)
-            j = 0
+            var j = 0
+
             while (movieList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -121,7 +110,6 @@ function displayChipperSuggestions() {
 
         for (var i = 0; i < movieList.length; i++) {
 
-
             var movieTitle = movieList[i].original_title
             var col = $("<div class='level-right movie-col'>")
             var card = $("<div class='card'>")
@@ -133,7 +121,6 @@ function displayChipperSuggestions() {
 
             var movieImg = $("<img>").attr("src", imageURL)
             moviePlot =(movieList[i].overview)
-            para1 = $("<p class='plot'>").text(moviePlot)
             var movieRating = movieList[i].vote_average
             var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
             var learnMore = $("<button data-title='"+ movieTitle +"' data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
@@ -144,7 +131,6 @@ function displayChipperSuggestions() {
 
             $(".suggestions2").append(suggestTitle)
             $(".suggestions2").append(row)
-
         }
 
         $('.modal-button').on("click", function(event) {
@@ -156,7 +142,6 @@ function displayChipperSuggestions() {
             $(".modal").modal()
             return false;
           });
-    
     });
 
     var tvQueryURL = "https://api.themoviedb.org/3/discover/tv?&original_air_date=2019&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=35,18"
@@ -170,20 +155,15 @@ function displayChipperSuggestions() {
         var suggestTitle = $("<h2 class='suggest-title'>").text("OR consider starting a binge-worthy TV series!")
         var row = $("<div class='level'>")
 
-        var j = 0
-
-        tvList = []
+        var tvList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(tvList)
-            j = 0
+            var j = 0
             while (tvList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -210,7 +190,6 @@ function displayChipperSuggestions() {
 
             var movieImg = $("<img>").attr("src", imageURL)
             moviePlot =(tvList[i].overview)
-            para1 = $("<p class='plot'>").text(moviePlot)
             var movieRating = tvList[i].vote_average
             var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
             var learnMore = $("<button data-title='"+ movieTitle +"' data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
@@ -252,23 +231,18 @@ function displayBummedSuggestions() {
         $(".suggestions2").empty();
         $(".suggestions3").empty();
 
-
         var suggestTitle = $("<h2 class='suggest-title'>").text("Cheer up! Try a family flick.")
         var row = $("<div class='level'>")
-        var j = 0
 
-        movieList = []
+        var movieList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(movieList)
-            j = 0
+            var j = 0
             while (movieList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -280,8 +254,6 @@ function displayBummedSuggestions() {
             movieList.push(response.results[randomIndex])
 
         }
-
-
 
         for (var i = 0; i < movieList.length; i++) {
 
@@ -333,20 +305,15 @@ function displayBummedSuggestions() {
         var suggestTitle = $("<h2 class='suggest-title'>").text("OR laugh it off & tune in to a comedy sitcom!")
         var row = $("<div class='level'>")
 
-        var j = 0
-
-        tvList = []
+        var tvList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(tvList)
-            j = 0
+            var j = 0
             while (tvList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -373,7 +340,6 @@ function displayBummedSuggestions() {
 
             var movieImg = $("<img>").attr("src", imageURL)
             moviePlot =(tvList[i].overview)
-            para1 = $("<p class='plot'>").text(moviePlot)
             var movieRating = tvList[i].vote_average
             var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
             var learnMore = $("<button data-title='"+ movieTitle +"' data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
@@ -397,7 +363,6 @@ function displayBummedSuggestions() {
             return false;
           });
 
-
     });
     
 }
@@ -416,26 +381,19 @@ function displayCuriousSuggestions() {
         $(".suggestions1").empty();
         $(".suggestions2").empty();
         $(".suggestions3").empty();
-        $(".suggestions4").empty();
-        $(".suggestions5").empty();
-
 
         var suggestTitle = $("<h2 class='suggest-title'>").text("Sink in to one of these true crime documentaries...")
         var row = $("<div class='level'>")
-        var j = 0
 
-        movieList = []
+        var movieList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(movieList)
-            j = 0
+            var j = 0
             while (movieList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -462,7 +420,6 @@ function displayCuriousSuggestions() {
 
             var movieImg = $("<img>").attr("src", imageURL)
             moviePlot =(movieList[i].overview)
-            para1 = $("<p class='plot'>").text(moviePlot)
             var movieRating = movieList[i].vote_average
             var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
             var learnMore = $("<button data-title='"+ movieTitle +"' data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
@@ -497,20 +454,16 @@ function displayCuriousSuggestions() {
 
         var suggestTitle = $("<h2 class='suggest-title'>").text("OR get lost in a mystery thriller...")
         var row = $("<div class='level'>")
-        var j = 0
 
-        movieList = []
+        var movieList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(movieList)
-            j = 0
+            var j = 0
             while (movieList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -537,7 +490,6 @@ function displayCuriousSuggestions() {
 
             var movieImg = $("<img>").attr("src", imageURL)
             moviePlot =(movieList[i].overview)
-            para1 = $("<p class='plot'>").text(moviePlot)
             var movieRating = movieList[i].vote_average
             var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
             var learnMore = $("<button data-title='"+ movieTitle +"' data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
@@ -578,26 +530,19 @@ function displayHangrySuggestions() {
         $(".suggestions1").empty();
         $(".suggestions2").empty();
         $(".suggestions3").empty();
-        $(".suggestions4").empty();
-        $(".suggestions5").empty();
-
 
         var suggestTitle = $("<h2 class='suggest-title'>").text("How about watching a tv show about chefs")
         var row = $("<div class='level'>")
-        var j = 0
 
-        movieList = []
+        var movieList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(movieList)
-            j = 0
+            var j = 0
             while (movieList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -624,7 +569,6 @@ function displayHangrySuggestions() {
 
             var movieImg = $("<img>").attr("src", imageURL)
             moviePlot =(movieList[i].overview)
-            para1 = $("<p class='plot'>").text(moviePlot)
             var movieRating = movieList[i].vote_average
             var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
             var learnMore = $("<button data-title='"+ movieTitle +"' data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
@@ -650,8 +594,6 @@ function displayHangrySuggestions() {
 
 
     });
-  
-
 
     //movie api search bakery
 
@@ -666,20 +608,16 @@ function displayHangrySuggestions() {
 
         var suggestTitle = $("<h2 class='suggest-title'>").text("How about a movie about bakeries?")
         var row = $("<div class='level'>")
-        var j = 0
 
-        movieList = []
+        var movieList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(movieList)
-            j = 0
+            var j = 0
             while (movieList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -745,20 +683,16 @@ function displayHangrySuggestions() {
 
        var suggestTitle = $("<h2 class='suggest-title'>").text("How about a movie about food?")
        var row = $("<div class='level'>")
-       var j = 0
 
-       movieList = []
+       var movieList = []
 
        for (let index = 0; index < 5; index++) {
 
            var randomIndex = Math.floor(Math.random() * 5)
 
-           //console.log(response.results[randomIndex])
-           //movieList.push(response.results[randomIndex])
-
            var id = response.results[randomIndex].id
            console.log(movieList)
-           j = 0
+           var j = 0
            while (movieList.findIndex(i => i.id === id) > -1) {
 
                randomIndex = Math.floor(Math.random() * response.results.length)
@@ -785,7 +719,6 @@ function displayHangrySuggestions() {
 
            var movieImg = $("<img>").attr("src", imageURL)
            moviePlot =(movieList[i].overview)
-           para1 = $("<p class='plot'>").text(moviePlot)
            var movieRating = movieList[i].vote_average
            var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
            var learnMore = $("<button data-title='"+ movieTitle +"' data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
@@ -826,25 +759,20 @@ function displayDistractedSuggestions() {
     
             $(".suggestions1").empty();
             $(".suggestions2").empty();
-            $(".suggestions3").empty();
-    
+            $(".suggestions3").empty(); 
     
             var suggestTitle = $("<h2 class='suggest-title'>").text("Man your battle stations!")
             var row = $("<div class='level'>")
-            var j = 0
     
-            movieList = []
+            var movieList = []
     
             for (let index = 0; index < 5; index++) {
     
                 var randomIndex = Math.floor(Math.random() * 5)
     
-                //console.log(response.results[randomIndex])
-                //movieList.push(response.results[randomIndex])
-    
                 var id = response.results[randomIndex].id
                 console.log(movieList)
-                j = 0
+                var j = 0
                 while (movieList.findIndex(i => i.id === id) > -1) {
     
                     randomIndex = Math.floor(Math.random() * response.results.length)
@@ -911,25 +839,19 @@ function displayFlirtySuggestions() {
         $(".suggestions1").empty();
         $(".suggestions2").empty();
         $(".suggestions3").empty();
-        $(".suggestions4").empty();
-        $(".suggestions5").empty();
 
         var suggestTitle = $("<h2 class='suggest-title'>").text("Cuddle up & watch a Rom-Dram!")
         var row = $("<div class='level'>")
-        var j = 0
 
-        movieList = []
+        var movieList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(movieList)
-            j = 0
+            var j = 0
             while (movieList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -941,8 +863,6 @@ function displayFlirtySuggestions() {
             movieList.push(response.results[randomIndex])
 
         }
-
-
 
         for (var i = 0; i < movieList.length; i++) {
 
@@ -958,7 +878,6 @@ function displayFlirtySuggestions() {
 
             var movieImg = $("<img>").attr("src", imageURL)
             moviePlot =(movieList[i].overview)
-            para1 = $("<p class='plot'>").text(moviePlot)
             var movieRating = movieList[i].vote_average
             var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
             var learnMore = $("<button data-title='"+ movieTitle +"' data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
@@ -993,20 +912,16 @@ function displayFlirtySuggestions() {
 
         var suggestTitle = $("<h2 class='suggest-title'>").text("OR perhaps a Rom-Com :-)")
         var row = $("<div class='level'>")
-        var j = 0
 
-        movieList = []
+        var movieList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(movieList)
-            j = 0
+            var j = 0
             while (movieList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -1018,8 +933,6 @@ function displayFlirtySuggestions() {
             movieList.push(response.results[randomIndex])
 
         }
-
-
 
         for (var i = 0; i < movieList.length; i++) {
 
@@ -1035,7 +948,6 @@ function displayFlirtySuggestions() {
 
             var movieImg = $("<img>").attr("src", imageURL)
             moviePlot =(movieList[i].overview)
-            para1 = $("<p class='plot'>").text(moviePlot)
             var movieRating = movieList[i].vote_average
             var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
             var learnMore = $("<button data-title='"+ movieTitle +"' data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
@@ -1069,25 +981,18 @@ function displayFlirtySuggestions() {
     }).then(function (response) {
         console.log(response)
 
-
-
         var suggestTitle = $("<h2 class='suggest-title'>").text("OR maybe some reality TV!")
         var row = $("<div class='level'>")
 
-        var j = 0
-
-        tvList = []
+        var tvList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(tvList)
-            j = 0
+            var j = 0
             while (tvList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -1099,8 +1004,6 @@ function displayFlirtySuggestions() {
             tvList.push(response.results[randomIndex])
 
         }
-
-
 
         for (var i = 0; i < tvList.length; i++) {
 
@@ -1116,7 +1019,6 @@ function displayFlirtySuggestions() {
 
             var movieImg = $("<img>").attr("src", imageURL)
             moviePlot =(tvList[i].overview)
-            para1 = $("<p class='plot'>").text(moviePlot)
             var movieRating = tvList[i].vote_average
             var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
             var learnMore = $("<button data-title='"+ movieTitle +"' data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
@@ -1157,25 +1059,19 @@ function displayGrumpySuggestions() {
         $(".suggestions1").empty();
         $(".suggestions2").empty();
         $(".suggestions3").empty();
-        $(".suggestions4").empty();
-        $(".suggestions5").empty();
 
         var suggestTitle = $("<h2 class='suggest-title'>").text("Lets watch a comedy and have a good laugh!")
         var row = $("<div class='level'>")
-        var j = 0
 
-        movieList = []
+        var movieList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(movieList)
-            j = 0
+            var j = 0
             while (movieList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -1187,8 +1083,6 @@ function displayGrumpySuggestions() {
             movieList.push(response.results[randomIndex])
 
         }
-
-
 
         for (var i = 0; i < movieList.length; i++) {
 
@@ -1204,7 +1098,6 @@ function displayGrumpySuggestions() {
 
             var movieImg = $("<img>").attr("src", imageURL)
             moviePlot =(movieList[i].overview)
-            para1 = $("<p class='plot'>").text(moviePlot)
             var movieRating = movieList[i].vote_average
             var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
             var learnMore = $("<button data-title='"+ movieTitle +"' data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
@@ -1239,20 +1132,16 @@ function displayGrumpySuggestions() {
 
         var suggestTitle = $("<h2 class='suggest-title'>").text("Nothing makes you feel better like a great adventure!")
         var row = $("<div class='level'>")
-        var j = 0
 
-        movieList = []
+        var movieList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(movieList)
-            j = 0
+            var j = 0
             while (movieList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -1264,8 +1153,6 @@ function displayGrumpySuggestions() {
             movieList.push(response.results[randomIndex])
 
         }
-
-
 
         for (var i = 0; i < movieList.length; i++) {
 
@@ -1281,7 +1168,6 @@ function displayGrumpySuggestions() {
 
             var movieImg = $("<img>").attr("src", imageURL)
             moviePlot =(movieList[i].overview)
-            para1 = $("<p class='plot'>").text(moviePlot)
             var movieRating = movieList[i].vote_average
             var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
             var learnMore = $("<button data-title='"+ movieTitle +"' data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
@@ -1304,8 +1190,8 @@ function displayGrumpySuggestions() {
             return false;
           });
 
-
     });
+
     // tmdb api for music
     queryURL = "https://api.themoviedb.org/3/discover/movie?&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=10402"
     $.ajax({
@@ -1316,20 +1202,16 @@ function displayGrumpySuggestions() {
 
         var suggestTitle = $("<h2 class='suggest-title'>").text("Or let's dance it off with some great music?")
         var row = $("<div class='level'>")
-        var j = 0
 
-        movieList = []
+        var movieList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(movieList)
-            j = 0
+            var j = 0
             while (movieList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -1341,8 +1223,6 @@ function displayGrumpySuggestions() {
             movieList.push(response.results[randomIndex])
 
         }
-
-
 
         for (var i = 0; i < movieList.length; i++) {
 
@@ -1358,7 +1238,6 @@ function displayGrumpySuggestions() {
 
             var movieImg = $("<img>").attr("src", imageURL)
             moviePlot =(movieList[i].overview)
-            para1 = $("<p class='plot'>").text(moviePlot)
             var movieRating = movieList[i].vote_average
             var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
             var learnMore = $("<button data-title='"+ movieTitle +"' data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
@@ -1380,8 +1259,6 @@ function displayGrumpySuggestions() {
             $(".modal").modal()
             return false;
           });
-
-
     });
 }
 
@@ -1394,28 +1271,22 @@ function displayStressedSuggestions() {
     }).then(function (response) {
         console.log(response)
 
-
         $(".suggestions1").empty();
         $(".suggestions2").empty();
         $(".suggestions3").empty();
-
-
+ 
         var suggestTitle = $("<h2 class='suggest-title'>").text("Take a trip into a world of fantasy!")
         var row = $("<div class='level'>")
-        var j = 0
 
-        movieList = []
+        var movieList = []
 
         for (let index = 0; index < 5; index++) {
 
             var randomIndex = Math.floor(Math.random() * 5)
 
-            //console.log(response.results[randomIndex])
-            //movieList.push(response.results[randomIndex])
-
             var id = response.results[randomIndex].id
             console.log(movieList)
-            j = 0
+            var j = 0
             while (movieList.findIndex(i => i.id === id) > -1) {
 
                 randomIndex = Math.floor(Math.random() * response.results.length)
@@ -1427,8 +1298,6 @@ function displayStressedSuggestions() {
             movieList.push(response.results[randomIndex])
 
         }
-
-
 
         for (var i = 0; i < movieList.length; i++) {
 

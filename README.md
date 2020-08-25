@@ -1,5 +1,5 @@
 
-# Mood Board
+# Moodii App
 
 
 <img width="85%" src="assets/Homepage-Moodii.png" alt="homepage">
