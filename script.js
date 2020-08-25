@@ -167,8 +167,6 @@ function displayChipperSuggestions() {
     }).then(function (response) {
         console.log(response)
 
-
-
         var suggestTitle = $("<h2 class='suggest-title'>").text("OR consider starting a binge-worthy TV series...")
         var row = $("<div class='level'>")
 
@@ -197,8 +195,6 @@ function displayChipperSuggestions() {
             tvList.push(response.results[randomIndex])
 
         }
-
-
 
         for (var i = 0; i < tvList.length; i++) {
 
@@ -252,6 +248,12 @@ function displayBummedSuggestions() {
     }).then(function (response) {
         console.log(response)
 
+        $(".suggestions1").empty();
+        $(".suggestions2").empty();
+        $(".suggestions3").empty();
+        $(".suggestions4").empty();
+        $(".suggestions5").empty();
+
         var suggestTitle = $("<h2 class='suggest-title'>").text("Relax and watch one of these comedies...")
         var row = $("<div class='level'>")
 
@@ -283,8 +285,6 @@ function displayBummedSuggestions() {
 
         for (var i = 0; i < 5; i++) {
 
-          
-
             var col = $("<div class='level-right movie-col'>")
             var card = $("<div class='card'>")
             var movieTitle = tvList[i].original_name
@@ -298,21 +298,18 @@ function displayBummedSuggestions() {
             var movieRating = tvList[i].vote_average
             var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
             var learnMore = $("<button type='submit' class='pure-button pure-button-primary' id='learn-more'>").text("Learn More")
-
+  
+        
             card.append(h5, movieImg, ratingP, learnMore)
             col.append(card)
             row.append(col)
 
             $(".suggestions3").append(suggestTitle)
             $(".suggestions3").append(row)
-
-
         }
 
 
     });
-
-
 }
 
 function displayCuriousSuggestions() {
@@ -361,8 +358,6 @@ function displayCuriousSuggestions() {
 
         }
 
-
-
         for (var i = 0; i < movieList.length; i++) {
 
 
@@ -401,7 +396,6 @@ function displayCuriousSuggestions() {
             return false;
           });
 
-
     });
 
     var movieQueryURL = "https://api.themoviedb.org/3/discover/movie?&popular?&primary_release_year=2018&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=9648,53"
@@ -438,8 +432,6 @@ function displayCuriousSuggestions() {
             movieList.push(response.results[randomIndex])
 
         }
-
-
 
         for (var i = 0; i < movieList.length; i++) {
 
