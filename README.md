@@ -1,7 +1,8 @@
 
 # Mood Board
 
-<img width="85%" src="assets/Homepage-Moodii" alt="homepage">
+
+<img width="85%" src="assets/Homepage-Moodii.png" alt="homepage">
 
 User Story
 -------------------------------------
@@ -17,7 +18,8 @@ I want to select from different romantic drama series when I am feeling flirty
 I want to select from different movies when I am feeling grumpy
 I want to select from different when I am feeling stressed
 
-<img width="85%" src="assets/Sample-Feelings-Page" alt="feelings">
+
+<img width="85%" src="assets/Sample-Feelings-Page.png" alt="feelings">
 
 Acceptance Criteria
 -------------------------------------
@@ -35,13 +37,15 @@ Each movie, documentary or commedy must show ratings
 Wach movie, documentary or comedy must show the learn more button
 The learn more button must show details about the movie, comedy or documentary
 
-<img width="85%" src="assets/Plot-Example" alt="plot">
+
+<img width="85%" src="assets/Plot-Example.png" alt="plot">
 
 API used for the Project
 -------------------------------------
-Movies: https://rapidapi.com/apidojo/api/imdb8
+Movies: https://www.themoviedb.org/
 
 
 Deployed Link: https://fullstackzack.github.io/moodii/
+
 
 
