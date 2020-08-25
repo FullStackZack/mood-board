@@ -1,6 +1,7 @@
 
 # Mood Board
 
+
 <img width="85%" src="Homepage-Moodii.jpg" alt="homepage">
 
 User Story
@@ -16,6 +17,7 @@ I want to select from different movies when I am distracted
 I want to select from different romantic drama series when I am feeling flirty
 I want to select from different movies when I am feeling grumpy
 I want to select from different when I am feeling stressed
+
 
 <img width="85%" src="Sample-Feelings-Page.jpg" alt="feelings">
 
@@ -34,6 +36,7 @@ Each movie, documentary or commedy must be displayed in a card
 Each movie, documentary or commedy must show ratings
 Wach movie, documentary or comedy must show the learn more button
 The learn more button must show details about the movie, comedy or documentary
+
 
 <img width="85%" src="Plot-Example.jpg" alt="plot">
 
