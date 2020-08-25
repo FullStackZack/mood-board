@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 var movieList = []
 var tvList = []
 function displayChipperSuggestions() {
@@ -816,6 +814,7 @@ function displayDistractedSuggestions() {
               });
         
         });
+
 }
 
 function displayFlirtySuggestions() {
@@ -1387,6 +1386,7 @@ function displayStressedSuggestions() {
           });
     
     });
+
 }
 
 $("#chipper-mood").on("click", function (event) {
@@ -1452,4 +1452,3 @@ $("#stressed-mood").on("click", function (event) {
 
     $("html").css("background-color", "rgba(178, 95, 226, 0.2)")
 });
->>>>>>> Stashed changes
