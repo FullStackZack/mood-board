@@ -157,6 +157,10 @@ h2 {
     text-align: left;
 }
 
+.footer {
+    visibility: hidden;
+}
+
 @media screen and (max-width: 550px) {
     h3 {
         font-family: 'Quicksand', sans-serif;

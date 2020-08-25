@@ -1393,6 +1393,7 @@ $("#chipper-mood").on("click", function (event) {
     event.preventDefault();
 
     displayChipperSuggestions();
+    $(".footer").css("visibility", "visible");
 
     $("html").css("background-color", "rgba(235, 233, 47, 0.2)")
 });
@@ -1401,6 +1402,7 @@ $("#bummed-mood").on("click", function (event) {
     event.preventDefault();
 
     displayBummedSuggestions();
+    $(".footer").css("visibility", "visible");
 
     $("html").css("background-color", "rgba(148, 198, 228, 0.2)")
 });
@@ -1409,6 +1411,7 @@ $("#curious-mood").on("click", function (event) {
     event.preventDefault();
 
     displayCuriousSuggestions();
+    $(".footer").css("visibility", "visible");
 
     $("html").css("background-color", "rgba(198, 231, 105, 0.2)")
 });
@@ -1417,6 +1420,7 @@ $("#hangry-mood").on("click", function (event) {
     event.preventDefault();
 
     displayHangrySuggestions();
+    $(".footer").css("visibility", "visible");
 
     $("html").css("background-color", "rgba(221, 83, 58, 0.2)")
 });
@@ -1425,6 +1429,7 @@ $("#distracted-mood").on("click", function (event) {
     event.preventDefault();
 
     displayDistractedSuggestions();
+    $(".footer").css("visibility", "visible");
 
     $("html").css("background-color", "rgba(236, 187, 28, 0.2)")
 })
@@ -1434,6 +1439,8 @@ $("#flirty-mood").on("click", function (event) {
 
     displayFlirtySuggestions();
 
+    $(".footer").css("visibility", "visible");
+
     $("html").css("background-color", "rgba(224, 181, 221, 0.2)")
 });
 
@@ -1441,6 +1448,7 @@ $("#grumpy-mood").on("click", function (event) {
     event.preventDefault();
 
     displayGrumpySuggestions();
+    $(".footer").css("visibility", "visible");
 
     $("html").css("background-color", "rgba(44, 194, 81, 0.2)")
 });
@@ -1449,6 +1457,7 @@ $("#stressed-mood").on("click", function (event) {
     event.preventDefault();
 
     displayStressedSuggestions();
+    $(".footer").css("visibility", "visible");
 
     $("html").css("background-color", "rgba(178, 95, 226, 0.2)")
 });
