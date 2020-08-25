@@ -1,6 +1,8 @@
 
 # Mood Board
 
+<img width="85%" src="assets/Homepage-Moodii" alt="homepage">
+
 User Story
 -------------------------------------
 
@@ -14,6 +16,8 @@ I want to select from different movies when I am distracted
 I want to select from different romantic drama series when I am feeling flirty
 I want to select from different movies when I am feeling grumpy
 I want to select from different when I am feeling stressed
+
+<img width="85%" src="assets/Sample-Feelings-Page" alt="feelings">
 
 Acceptance Criteria
 -------------------------------------
@@ -31,16 +35,13 @@ Each movie, documentary or commedy must show ratings
 Wach movie, documentary or comedy must show the learn more button
 The learn more button must show details about the movie, comedy or documentary
 
-Examples of APIs we May Use
+<img width="85%" src="assets/Plot-Example" alt="plot">
+
+API used for the Project
 -------------------------------------
-
-Horoscope: https://rapidapi.com/sameer.kumar/api/aztro
-Quotes: https://rapidapi.com/martin.svoboda/api/quotes15
-Jokes: https://rapidapi.com/LemmoTresto/api/joke3
-Musics Spotify: https://rapidapi.com/stefan.skliarov/api/Spotify
 Movies: https://rapidapi.com/apidojo/api/imdb8
-Recipes: https://rapidapi.com/spoonacular/api/recipe-food-nutrition
 
 
+Deployed Link: https://fullstackzack.github.io/moodii/
 
 
