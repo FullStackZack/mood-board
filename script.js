@@ -734,6 +734,87 @@ function displayHangrySuggestions() {
 
 function displayDistractedSuggestions() {
 
+        var movieQueryURL = "https://api.themoviedb.org/3/discover/movie?&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=10752"
+        $.ajax({
+            url: movieQueryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response)
+    
+    
+            $(".suggestions1").empty();
+            $(".suggestions2").empty();
+            $(".suggestions3").empty();
+    
+    
+            var suggestTitle = $("<h2 class='suggest-title'>").text("Man your battle stations!")
+            var row = $("<div class='level'>")
+            var j = 0
+    
+            movieList = []
+    
+            for (let index = 0; index < 5; index++) {
+    
+                var randomIndex = Math.floor(Math.random() * 5)
+    
+                //console.log(response.results[randomIndex])
+                //movieList.push(response.results[randomIndex])
+    
+                var id = response.results[randomIndex].id
+                console.log(movieList)
+                j = 0
+                while (movieList.findIndex(i => i.id === id) > -1) {
+    
+                    randomIndex = Math.floor(Math.random() * response.results.length)
+                    id = response.results[randomIndex].id
+                    console.log(id)
+                    j++
+                }
+    
+                movieList.push(response.results[randomIndex])
+    
+            }
+    
+    
+            for (var i = 0; i < movieList.length; i++) {
+    
+    
+                var movieTitle = movieList[i].original_title
+                var col = $("<div class='level-right movie-col'>")
+                var card = $("<div class='card'>")
+    
+                var h5 = $("<h5 class='card-header-title'>").text(movieTitle)
+                 
+                var moviePoster = movieList[i].poster_path
+                var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
+    
+                var movieImg = $("<img>").attr("src", imageURL)
+                moviePlot =(movieList[i].overview)
+                var movieRating = movieList[i].vote_average
+                var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
+                var learnMore = $("<button data-title='"+ movieTitle +"'data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
+    
+                card.append(h5, movieImg, ratingP, learnMore)
+                col.append(card)
+                row.append(col)
+    
+                $(".suggestions1").append(suggestTitle)
+                $(".suggestions1").append(row)
+    
+            }
+    
+            $('.modal-button').on("click", function(event) {
+                var movieTitle = $(this).attr("data-title")
+                $(".modal-title").html("<b>"+ movieTitle)
+                   var moviePlot=$(this).attr("data-plot")
+                   $(".modal-plot").html(moviePlot)
+                   
+                $(".modal").modal()
+                return false;
+              });
+        
+        });
+
 }
 
 function displayFlirtySuggestions() {
@@ -1224,8 +1305,89 @@ function displayGrumpySuggestions() {
 
 function displayStressedSuggestions() {
 
-}
+    var movieQueryURL = "https://api.themoviedb.org/3/discover/movie?&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=14"
+    $.ajax({
+        url: movieQueryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response)
 
+
+        $(".suggestions1").empty();
+        $(".suggestions2").empty();
+        $(".suggestions3").empty();
+
+
+        var suggestTitle = $("<h2 class='suggest-title'>").text("Take a trip into a world of fantasy!")
+        var row = $("<div class='level'>")
+        var j = 0
+
+        movieList = []
+
+        for (let index = 0; index < 5; index++) {
+
+            var randomIndex = Math.floor(Math.random() * 5)
+
+            //console.log(response.results[randomIndex])
+            //movieList.push(response.results[randomIndex])
+
+            var id = response.results[randomIndex].id
+            console.log(movieList)
+            j = 0
+            while (movieList.findIndex(i => i.id === id) > -1) {
+
+                randomIndex = Math.floor(Math.random() * response.results.length)
+                id = response.results[randomIndex].id
+                console.log(id)
+                j++
+            }
+
+            movieList.push(response.results[randomIndex])
+
+        }
+
+
+
+        for (var i = 0; i < movieList.length; i++) {
+
+
+            var movieTitle = movieList[i].original_title
+            var col = $("<div class='level-right movie-col'>")
+            var card = $("<div class='card'>")
+
+            var h5 = $("<h5 class='card-header-title'>").text(movieTitle)
+             
+            var moviePoster = movieList[i].poster_path
+            var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
+
+            var movieImg = $("<img>").attr("src", imageURL)
+            moviePlot =(movieList[i].overview)
+            var movieRating = movieList[i].vote_average
+            var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
+            var learnMore = $("<button data-title='"+ movieTitle +"'data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
+
+            card.append(h5, movieImg, ratingP, learnMore)
+            col.append(card)
+            row.append(col)
+
+            $(".suggestions1").append(suggestTitle)
+            $(".suggestions1").append(row)
+
+        }
+
+        $('.modal-button').on("click", function(event) {
+            var movieTitle = $(this).attr("data-title")
+            $(".modal-title").html("<b>"+ movieTitle)
+               var moviePlot=$(this).attr("data-plot")
+               $(".modal-plot").html(moviePlot)
+               
+            $(".modal").modal()
+            return false;
+          });
+    
+    });
+
+}
 
 $("#chipper-mood").on("click", function (event) {
     event.preventDefault();
