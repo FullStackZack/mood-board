@@ -15,7 +15,7 @@ function displayChipperSuggestions() {
         $(".suggestions3").empty();
 
 
-        var suggestTitle = $("<h2 class='suggest-title'>").text("Check out one of these kicka$$ hit movies...")
+        var suggestTitle = $("<h2 class='suggest-title'>").text("Great! Check out one of these kicka$$ hits.")
         var row = $("<div class='level'>")
         var j = 0
 
@@ -91,7 +91,7 @@ function displayChipperSuggestions() {
     }).then(function (response) {
         console.log(response)
 
-        var suggestTitle = $("<h2 class='suggest-title'>").text("OR maybe go with a critically-acclaimed drama...")
+        var suggestTitle = $("<h2 class='suggest-title'>").text("OR go with a critically-acclaimed drama!")
         var row = $("<div class='level'>")
         var j = 0
 
@@ -167,7 +167,7 @@ function displayChipperSuggestions() {
     }).then(function (response) {
         console.log(response)
 
-        var suggestTitle = $("<h2 class='suggest-title'>").text("OR consider starting a binge-worthy TV series...")
+        var suggestTitle = $("<h2 class='suggest-title'>").text("OR consider starting a binge-worthy TV series!")
         var row = $("<div class='level'>")
 
         var j = 0
@@ -240,6 +240,88 @@ function displayChipperSuggestions() {
 
 function displayBummedSuggestions() {
 
+    var movieQueryURL = "https://api.themoviedb.org/3/discover/movie?&popular?&primary_release_year=2019&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=35,16"
+    $.ajax({
+        url: movieQueryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response)
+
+
+        $(".suggestions1").empty();
+        $(".suggestions2").empty();
+        $(".suggestions3").empty();
+
+
+        var suggestTitle = $("<h2 class='suggest-title'>").text("Cheer up! Try a family flick.")
+        var row = $("<div class='level'>")
+        var j = 0
+
+        movieList = []
+
+        for (let index = 0; index < 5; index++) {
+
+            var randomIndex = Math.floor(Math.random() * 5)
+
+            //console.log(response.results[randomIndex])
+            //movieList.push(response.results[randomIndex])
+
+            var id = response.results[randomIndex].id
+            console.log(movieList)
+            j = 0
+            while (movieList.findIndex(i => i.id === id) > -1) {
+
+                randomIndex = Math.floor(Math.random() * response.results.length)
+                id = response.results[randomIndex].id
+                console.log(id)
+                j++
+            }
+
+            movieList.push(response.results[randomIndex])
+
+        }
+
+
+
+        for (var i = 0; i < movieList.length; i++) {
+
+
+            var movieTitle = movieList[i].original_title
+            var col = $("<div class='level-right movie-col'>")
+            var card = $("<div class='card'>")
+
+            var h5 = $("<h5 class='card-header-title'>").text(movieTitle)
+             
+            var moviePoster = movieList[i].poster_path
+            var imageURL = ("https://image.tmdb.org/t/p/w500" + moviePoster)
+
+            var movieImg = $("<img>").attr("src", imageURL)
+            moviePlot =(movieList[i].overview)
+            var movieRating = movieList[i].vote_average
+            var ratingP = $("<p class='rating'>").text("Rating: " + movieRating + "/10")
+            var learnMore = $("<button data-title='"+ movieTitle +"'data-plot='"+ moviePlot +"' class='button is-primary is-large modal-button' data-target='modal' aria-haspopup='true'>").text("Learn More")
+
+            card.append(h5, movieImg, ratingP, learnMore)
+            col.append(card)
+            row.append(col)
+
+            $(".suggestions1").append(suggestTitle)
+            $(".suggestions1").append(row)
+
+        }
+
+        $('.modal-button').on("click", function(event) {
+            var movieTitle = $(this).attr("data-title")
+            $(".modal-title").html("<b>"+ movieTitle)
+               var moviePlot=$(this).attr("data-plot")
+               $(".modal-plot").html(moviePlot)
+               
+            $(".modal").modal()
+            return false;
+          });
+    
+    });
+
     var tvQueryURL = "https://api.themoviedb.org/3/discover/tv?&original_air_date=2019&popular?&api_key=97b221ffbf12db5db8bf8eae9e080354&with_original_language=en&with_genres=35"
 
     $.ajax({
@@ -248,7 +330,7 @@ function displayBummedSuggestions() {
     }).then(function (response) {
         console.log(response)
 
-        var suggestTitle = $("<h2 class='suggest-title'>").text("OR consider starting a binge-worthy TV series...")
+        var suggestTitle = $("<h2 class='suggest-title'>").text("OR laugh it off & tune in to a comedy sitcom!")
         var row = $("<div class='level'>")
 
         var j = 0
@@ -300,8 +382,8 @@ function displayBummedSuggestions() {
             col.append(card)
             row.append(col)
 
-            $(".suggestions3").append(suggestTitle)
-            $(".suggestions3").append(row)
+            $(".suggestions2").append(suggestTitle)
+            $(".suggestions2").append(row)
 
         }
 
@@ -832,7 +914,7 @@ function displayFlirtySuggestions() {
         $(".suggestions4").empty();
         $(".suggestions5").empty();
 
-        var suggestTitle = $("<h2 class='suggest-title'>").text("Cuddle up & watch a Rom-Dram...")
+        var suggestTitle = $("<h2 class='suggest-title'>").text("Cuddle up & watch a Rom-Dram!")
         var row = $("<div class='level'>")
         var j = 0
 
@@ -909,7 +991,7 @@ function displayFlirtySuggestions() {
     }).then(function (response) {
         console.log(response)
 
-        var suggestTitle = $("<h2 class='suggest-title'>").text("OR perhaps a Rom-Com...")
+        var suggestTitle = $("<h2 class='suggest-title'>").text("OR perhaps a Rom-Com :-)")
         var row = $("<div class='level'>")
         var j = 0
 
@@ -989,7 +1071,7 @@ function displayFlirtySuggestions() {
 
 
 
-        var suggestTitle = $("<h2 class='suggest-title'>").text("OR maybe a little reality TV...")
+        var suggestTitle = $("<h2 class='suggest-title'>").text("OR maybe some reality TV!")
         var row = $("<div class='level'>")
 
         var j = 0
