@@ -248,7 +248,7 @@ function displayBummedSuggestions() {
     }).then(function (response) {
         console.log(response)
 
-        var suggestTitle = $("<h2 class='suggest-title'>").text("OR consider starting a binge-worthy TV series...")
+        var suggestTitle = $("<h2 class='suggest-title'>").text("OR relax and watch some comedies...")
         var row = $("<div class='level'>")
 
         var j = 0
